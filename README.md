@@ -22,14 +22,12 @@
 | [banking-chatbot-rag](https://github.com/metehanulusoy/banking-chatbot-rag) | RAG chatbot for Turkish banking FAQs with guardrails & compliance | LangChain, ChromaDB, FastAPI |
 
 ### Credit Risk Model — Evaluation Dashboard
-<p align="center">
-  <img src="https://raw.githubusercontent.com/metehanulusoy/credit-risk-scoring/main/docs/evaluation_dashboard.png" width="700" />
-</p>
+
+![Evaluation Dashboard](https://raw.githubusercontent.com/metehanulusoy/credit-risk-scoring/main/docs/evaluation_dashboard.png)
 
 ### SHAP Feature Importance
-<p align="center">
-  <img src="https://raw.githubusercontent.com/metehanulusoy/credit-risk-scoring/main/docs/shap_importance.png" width="600" />
-</p>
+
+![SHAP Importance](https://raw.githubusercontent.com/metehanulusoy/credit-risk-scoring/main/docs/shap_importance.png)
 
 ---
 
