@@ -1,8 +1,6 @@
 name: Generate Snake Animation
 
 on:
-  # Re-run every day at 02:00 UTC so the snake stays in sync with the
-  # contribution graph. Also run on push to master and on manual dispatch.
   schedule:
     - cron: "0 2 * * *"
   workflow_dispatch:
@@ -16,8 +14,10 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate snake SVGs
-        uses: Platane/snk/svg-only@v3
+      - uses: actions/checkout@v4
+
+      - name: Generate snake SVGs and commit them to the output branch
+        uses: Platane/snk@v3
         with:
           github_user_name: metehanulusoy
           outputs: |
@@ -29,5 +29,6 @@ jobs:
         with:
           target_branch: output
           build_dir: dist
+          keep_history: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
