@@ -122,12 +122,16 @@
 ### GitHub stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=metehanulusoy&show_icons=true&theme=tokyonight&hide_border=true&title_color=A855F7&icon_color=A855F7&include_all_commits=true&count_private=true" height="170" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=metehanulusoy&layout=compact&theme=tokyonight&hide_border=true&title_color=A855F7&langs_count=8" height="170" />
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=metehanulusoy&show_icons=true&theme=tokyonight&hide_border=true&title_color=A855F7&icon_color=A855F7&include_all_commits=true&cache_seconds=86400" height="170" />
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=metehanulusoy&layout=compact&theme=tokyonight&hide_border=true&title_color=A855F7&langs_count=8&cache_seconds=86400" height="170" />
 </p>
 
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=metehanulusoy&theme=tokyonight&hide_border=true&background=1A1B27&ring=A855F7&fire=A855F7&currStreakLabel=A855F7" height="170" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=metehanulusoy&theme=tokyo-night&hide_border=true&bg_color=1A1B27&color=A855F7&line=A855F7&point=FFFFFF&area=true&area_color=A855F7" />
 </p>
 
 <p align="center">
