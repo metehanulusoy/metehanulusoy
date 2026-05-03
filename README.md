@@ -14,7 +14,6 @@
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=metehanulusoy&color=A855F7&style=for-the-badge&label=PROFILE+VIEWS" />
   <img src="https://img.shields.io/github/followers/metehanulusoy?style=for-the-badge&color=A855F7&labelColor=1F1F23" />
-  <img src="https://img.shields.io/github/stars/metehanulusoy?style=for-the-badge&color=A855F7&labelColor=1F1F23" />
 </p>
 
 ---
@@ -26,6 +25,30 @@
 - 🧠 **15-project AI Engineering portfolio** in progress: type-safe Python, mypy strict, ≥80 % test coverage on every repo
 - 🛠️ Co-authoring most repos with **Claude Opus 4.7** under the Anthropic SDK / Claude Code workflow
 - ✉️ Open to AI Engineer roles (remote / EU / Turkey) — `ulusoy.metehan03@gmail.com`
+
+> [!TIP]
+> 🚧 **Currently working on:** Project 06 of 15 — *Hybrid-Search RAG Pipeline* (dense + BM25 + RRF fusion + cross-encoder rerank + citation verification). Star the profile to follow new releases.
+
+---
+
+### 🏆 Featured work
+
+<p align="center">
+  <a href="https://github.com/metehanulusoy/llm-cost-autopilot">
+    <img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=llm-cost-autopilot&theme=tokyonight&hide_border=true&title_color=A855F7&icon_color=A855F7&cache_seconds=86400" />
+  </a>
+  <a href="https://github.com/metehanulusoy/failure-forensics">
+    <img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=failure-forensics&theme=tokyonight&hide_border=true&title_color=A855F7&icon_color=A855F7&cache_seconds=86400" />
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/metehanulusoy/llm-arbitration">
+    <img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=llm-arbitration&theme=tokyonight&hide_border=true&title_color=A855F7&icon_color=A855F7&cache_seconds=86400" />
+  </a>
+  <a href="https://github.com/metehanulusoy/self-healing-docs">
+    <img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=self-healing-docs&theme=tokyonight&hide_border=true&title_color=A855F7&icon_color=A855F7&cache_seconds=86400" />
+  </a>
+</p>
 
 ---
 
@@ -41,7 +64,7 @@
 | 04 | [self-healing-docs](https://github.com/metehanulusoy/self-healing-docs) | GitHub Action that detects when code changes made docs stale, then opens an auto-fix PR or flags affected sections for review. Embedding-based code-to-docs link graph + LLM staleness verifier + style-preservation pass. | GitHub Actions · OpenAI embeddings · PyGithub · unidiff |
 | 05 | [llm-arbitration](https://github.com/metehanulusoy/llm-arbitration) | Multi-agent verdict synthesis. Three specialist critics on three different providers grade an output along distinct dimensions; pure disagreement detector + adjudicator agent produce a single confidence-scored verdict. | FastAPI · OpenAI · Anthropic · Ollama · LangGraph-style DAG |
 
-> 06–15 in progress: hybrid-search RAG, semantic caching, text-to-SQL with guardrails, prompt A/B testing, LoRA fine-tuning, LLM gateway with rate limiting, AI feature flags, eval-set generators, multi-modal document processing, and an agent orchestration platform. **Star the profile for updates.**
+> 06–15 in progress: hybrid-search RAG, semantic caching, text-to-SQL with guardrails, prompt A/B testing, LoRA fine-tuning, LLM gateway with rate limiting, AI feature flags, eval-set generators, multi-modal document processing, and an agent orchestration platform.
 
 ---
 
@@ -64,43 +87,40 @@
 
 </details>
 
----
+<details>
+<summary><b>🧰 Side projects &amp; experiments</b></summary>
 
-### Other projects
+<br/>
 
 | Project | Description |
 |---|---|
 | [pdf-rag-app](https://github.com/metehanulusoy/pdf-rag-app) | AI-powered PDF Q&amp;A system with RAG &amp; OpenAI. |
+| [awesome-n8n-workflows](https://github.com/metehanulusoy/awesome-n8n-workflows) | 2 055 production-ready n8n automation templates. |
 | [price-tracker-bot](https://github.com/metehanulusoy/price-tracker-bot) | Price tracking bot for Trendyol &amp; Amazon with Telegram alerts. |
 | [emotion-detector](https://github.com/metehanulusoy/emotion-detector) | Real-time facial emotion detection using face-api.js. |
-| [awesome-n8n-workflows](https://github.com/metehanulusoy/awesome-n8n-workflows) | 2 055 production-ready n8n automation templates. |
+
+</details>
 
 ---
 
 ### Tech I work with
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,fastapi,docker,sklearn,pytorch,tensorflow,postgres,sqlite,redis&theme=dark" alt="Stack icons row 1" />
-  <br/>
-  <img src="https://skillicons.dev/icons?i=git,github,githubactions,linux,bash,ts,js,react,nodejs&theme=dark" alt="Stack icons row 2" />
+  <img src="https://skillicons.dev/icons?i=python,fastapi,docker,sklearn,postgres,sqlite,redis,git,githubactions,linux&theme=dark" alt="Stack icons" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white" />
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
-  <img src="https://img.shields.io/badge/uv%20%2F%20ruff-000000?style=for-the-badge&logo=ruff&logoColor=white" />
+  <img src="https://img.shields.io/badge/ruff-D7FF64?style=for-the-badge&logo=ruff&logoColor=black" />
   <img src="https://img.shields.io/badge/mypy-2A6DB2?style=for-the-badge&logoColor=white" />
   <img src="https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" />
-  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
   <img src="https://img.shields.io/badge/XGBoost-337AB7?style=for-the-badge&logoColor=white" />
   <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logoColor=white" />
   <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" />
   <img src="https://img.shields.io/badge/Anthropic-191919?style=for-the-badge&logoColor=white" />
   <img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" />
-  <img src="https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white" />
+  <img src="https://img.shields.io/badge/OpenTelemetry-000000?style=for-the-badge&logo=opentelemetry&logoColor=white" />
+  <img src="https://img.shields.io/badge/uvicorn-499848?style=for-the-badge&logo=gunicorn&logoColor=white" />
 </p>
 
 ---
@@ -130,12 +150,22 @@
   <img src="https://streak-stats.demolab.com?user=metehanulusoy&theme=tokyonight&hide_border=true&background=1A1B27&ring=A855F7&fire=A855F7&currStreakLabel=A855F7" height="170" />
 </p>
 
+#### 🐍 Watch my contributions get eaten
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/snake-dark.svg" alt="snake animation" />
+</p>
+
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=metehanulusoy&theme=tokyo-night&hide_border=true&bg_color=1A1B27&color=A855F7&line=A855F7&point=FFFFFF&area=true&area_color=A855F7" />
 </p>
 
+---
+
+### 💭 Wisdom of the day
+
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=metehanulusoy&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=8" />
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Quote" />
 </p>
 
 ---
