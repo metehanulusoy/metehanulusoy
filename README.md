@@ -27,7 +27,8 @@
 - ✉️ Open to AI Engineer roles (remote / EU / Turkey) — `ulusoy.metehan03@gmail.com`
 
 > [!TIP]
-> 🚧 **Currently working on:** Project 06 of 15 — *Hybrid-Search RAG Pipeline* (dense + BM25 + RRF fusion + cross-encoder rerank + citation verification). Star the profile to follow new releases.
+> ✅ **Just shipped:** Project 06 — [Hybrid-Search RAG Pipeline](https://github.com/metehanulusoy/rag-hybrid-search) (dense + BM25 + RRF fusion + cross-encoder rerank + citation verification).
+> 🚧 **Now building:** Project 07 of 15 — semantic caching layer (embedding-similarity response cache + TTL + cache-quality eval). Star the profile to follow new releases.
 
 ---
 
@@ -63,8 +64,9 @@
 | 03 | [failure-forensics](https://github.com/metehanulusoy/failure-forensics) | Observability + auto root-cause analysis for multi-step AI pipelines. Decorator-based span tracing, parallel LLM-as-judge backward trace, atomic feedback-to-eval loop, Streamlit explorer. | FastAPI · OpenTelemetry · SQLite WAL · Streamlit |
 | 04 | [self-healing-docs](https://github.com/metehanulusoy/self-healing-docs) | GitHub Action that detects when code changes made docs stale, then opens an auto-fix PR or flags affected sections for review. Embedding-based code-to-docs link graph + LLM staleness verifier + style-preservation pass. | GitHub Actions · OpenAI embeddings · PyGithub · unidiff |
 | 05 | [llm-arbitration](https://github.com/metehanulusoy/llm-arbitration) | Multi-agent verdict synthesis. Three specialist critics on three different providers grade an output along distinct dimensions; pure disagreement detector + adjudicator agent produce a single confidence-scored verdict. | FastAPI · OpenAI · Anthropic · Ollama · LangGraph-style DAG |
+| 06 | [rag-hybrid-search](https://github.com/metehanulusoy/rag-hybrid-search) | Production-grade RAG pipeline. Multi-format ingestion, dense + BM25 retrieval with reciprocal-rank fusion, cross-encoder rerank, citation verification, and a retrieval-quality eval set. | FastAPI · sentence-transformers · BM25 · Docker |
 
-> 06–15 in progress: hybrid-search RAG, semantic caching, text-to-SQL with guardrails, prompt A/B testing, LoRA fine-tuning, LLM gateway with rate limiting, AI feature flags, eval-set generators, multi-modal document processing, and an agent orchestration platform.
+> 07–15 in progress: semantic caching, text-to-SQL with guardrails, prompt A/B testing, LoRA fine-tuning, LLM gateway with rate limiting, AI feature flags, eval-set generators, multi-modal document processing, and an agent orchestration platform.
 
 ---
 
@@ -94,10 +96,10 @@
 
 | Project | Description |
 |---|---|
+| [claude-recipes](https://github.com/metehanulusoy/claude-recipes) | Copy-paste-ready skills, subagents, hooks &amp; MCP configs for Claude Code — each one explained (EN/TR). |
 | [pdf-rag-app](https://github.com/metehanulusoy/pdf-rag-app) | AI-powered PDF Q&amp;A system with RAG &amp; OpenAI. |
 | [awesome-n8n-workflows](https://github.com/metehanulusoy/awesome-n8n-workflows) | 2 055 production-ready n8n automation templates. |
 | [price-tracker-bot](https://github.com/metehanulusoy/price-tracker-bot) | Price tracking bot for Trendyol &amp; Amazon with Telegram alerts. |
-| [emotion-detector](https://github.com/metehanulusoy/emotion-detector) | Real-time facial emotion detection using face-api.js. |
 
 </details>
 
