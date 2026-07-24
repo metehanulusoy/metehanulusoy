@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="section divider">
+  <style>
+    .gstop  { stop-color: #A855F7; }
+    .flow   { animation: dashflow 9s linear infinite; }
+    .core-d { fill: #A855F7; animation: corepulse 3s ease-in-out infinite; }
+    .halo-d { fill: none; stroke: #C084FC; stroke-width: 1;
+              animation: halopulse 3s ease-out infinite; }
+    .pk-core { fill: #C084FC; }
+    .pk-glow { fill: #A855F7; }
+    @keyframes dashflow  { to { stroke-dashoffset: -120; } }
+    @keyframes corepulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+    @keyframes halopulse { 0%   { transform: scale(.6); opacity: .8; }
+                           70%  { transform: scale(2.4); opacity: 0; }
+                           100% { transform: scale(2.4); opacity: 0; } }
+    @media (prefers-color-scheme: light) {
+      .gstop   { stop-color: #7C3AED; }
+      .core-d  { fill: #7C3AED; }
+      .halo-d  { stroke: #7C3AED; }
+      .pk-core { fill: #7C3AED; }
+      .pk-glow { fill: #7C3AED; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
+  </style>
+  <defs>
+    <linearGradient id="dg" x1="0" y1="0" x2="1000" y2="0" gradientUnits="userSpaceOnUse">
+      <stop class="gstop" offset="0" stop-opacity="0"/>
+      <stop class="gstop" offset="0.5" stop-opacity="1"/>
+      <stop class="gstop" offset="1" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="pblur" x="-200%" y="-200%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="2.4"/>
+    </filter>
+  </defs>
+
+  <!-- base line: gradient fading at both ends, center at 30% opacity -->
+  <line x1="0" y1="20" x2="1000" y2="20" stroke="url(#dg)" stroke-opacity="0.55" stroke-width="1.2"/>
+
+  <!-- dash-flow overlay -->
+  <line class="flow" x1="0" y1="20" x2="1000" y2="20" stroke="url(#dg)" stroke-opacity="0.8"
+        stroke-width="1" stroke-dasharray="2 10" stroke-linecap="round"/>
+
+  <!-- data packet traveling the full width, fading in/out at the ends -->
+  <g>
+    <animateMotion dur="6s" repeatCount="indefinite" path="M0,20 L1000,20"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.88;1"
+             dur="6s" repeatCount="indefinite"/>
+    <circle class="pk-glow" r="4.5" opacity="0.55" filter="url(#pblur)"/>
+    <circle class="pk-core" r="2"/>
+  </g>
+
+  <!-- center diamond node, pulsing -->
+  <g transform="translate(500,20)">
+    <path class="halo-d" d="M0,-5 L5,0 L0,5 L-5,0 Z"/>
+    <path class="core-d" d="M0,-4 L4,0 L0,4 L-4,0 Z"/>
+  </g>
+</svg>

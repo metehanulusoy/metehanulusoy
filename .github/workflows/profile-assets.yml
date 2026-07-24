@@ -1,0 +1,78 @@
+name: Build profile assets
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - "scripts/**"
+      - "conf/**"
+      - ".github/workflows/profile-assets.yml"
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate contribution snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: metehanulusoy
+          outputs: |
+            dist/snake-dark.svg?palette=github-dark&color_snake=#A855F7&color_dots=#1F1F23,#3b1f4d,#6b2fb3,#A855F7,#E0B0FF
+            dist/snake-light.svg?palette=github-light&color_snake=#A855F7&color_dots=#f0f0f0,#dbb8ff,#A855F7,#6b2fb3,#3b1f4d
+
+      - name: Generate 3D contribution graph (dark)
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: metehanulusoy
+          SETTING_JSON: conf/3d-purple.json
+
+      - name: Generate 3D contribution graph (light)
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: metehanulusoy
+          SETTING_JSON: conf/3d-purple-light.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install script dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Build live-stats terminal card
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USER_NAME: metehanulusoy
+        run: python scripts/build_terminal_card.py
+
+      - name: Build daily AI status line
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_USER: metehanulusoy
+        run: python scripts/build_ai_log.py
+
+      - name: Collect generated assets into dist
+        run: |
+          mkdir -p dist
+          cp -v assets/generated/*.svg dist/ || true
+          cp -v profile-3d-contrib/*.svg dist/ || true
+
+      - name: Publish everything to the output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+          keep_history: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

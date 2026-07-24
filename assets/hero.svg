@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 260" role="img" aria-label="Metehan Ulusoy — AI Engineer. Synthwave data-horizon hero banner.">
+  <title>Metehan Ulusoy — AI Engineer</title>
+
+  <defs>
+    <!-- Gradient sweep for the name (reflect => seamless loop when translated by 1000) -->
+    <linearGradient id="nameGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="500" y2="0" spreadMethod="reflect">
+      <stop offset="0" class="nsA" stop-color="#C9D1D9"/>
+      <stop offset="1" class="nsB" stop-color="#C084FC"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="1000 0" dur="7s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <!-- Vertical fade for the grid: transparent at horizon, solid mid, softened at bottom edge -->
+    <linearGradient id="gridFade" gradientUnits="userSpaceOnUse" x1="0" y1="172" x2="0" y2="260">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.22" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="0.78" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.4"/>
+    </linearGradient>
+    <mask id="gridMask">
+      <rect x="0" y="172" width="1000" height="90" fill="url(#gridFade)"/>
+    </mask>
+
+    <!-- Soft glow at the vanishing point -->
+    <radialGradient id="vpGlow" gradientUnits="userSpaceOnUse" cx="500" cy="172" r="300">
+      <stop offset="0" class="vpA" stop-color="#A855F7" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#A855F7" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Tail gradient for the shooting particle (local coords of the particle group) -->
+    <linearGradient id="tailGrad" gradientUnits="userSpaceOnUse" x1="-36" y1="0" x2="0" y2="0">
+      <stop offset="0" class="ptA" stop-color="#C084FC" stop-opacity="0"/>
+      <stop offset="1" class="ptB" stop-color="#C084FC" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <filter id="neon" x="-20%" y="-80%" width="140%" height="260%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <filter id="softBlur" x="-20%" y="-400%" width="140%" height="900%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="dotGlow" x="-250%" y="-250%" width="600%" height="600%">
+      <feGaussianBlur stdDeviation="1.6"/>
+    </filter>
+  </defs>
+
+  <style>
+    .name {
+      font-family: -apple-system, 'Segoe UI', Ubuntu, Roboto, sans-serif;
+      font-size: 46px; font-weight: 700; letter-spacing: 2px;
+    }
+    .sub {
+      font-family: 'SFMono-Regular', 'Cascadia Code', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 13px; letter-spacing: 4px; fill: #8B949E;
+    }
+    .radial { stroke: #A855F7; stroke-opacity: 0.16; stroke-width: 1; }
+    .hline  { stroke: #A855F7; stroke-opacity: 0.22; stroke-width: 1; }
+    .horizon { stroke: #A855F7; stroke-opacity: 0.35; stroke-width: 1.5; }
+    .waveAp { stroke: #A855F7; stroke-opacity: 0.42; stroke-width: 1.5; fill: none; }
+    .waveBp { stroke: #7AA2F7; stroke-opacity: 0.34; stroke-width: 1.5; fill: none; }
+    .glowText { fill: #A855F7; }
+    .pHead { fill: #C084FC; }
+
+    .scroll { animation: gridScroll 3s linear infinite; }
+    @keyframes gridScroll { from { transform: translateY(0); } to { transform: translateY(16px); } }
+
+    .waveA { animation: driftA 8s linear infinite; }
+    @keyframes driftA { from { transform: translateX(0); } to { transform: translateX(-250px); } }
+
+    .waveB { animation: driftB 14s linear infinite; }
+    @keyframes driftB { from { transform: translateX(0); } to { transform: translateX(320px); } }
+
+    .glowText { animation: pulse 4.5s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+
+    @keyframes pulseL { 0%, 100% { opacity: 0.10; } 50% { opacity: 0.22; } }
+    @media (prefers-color-scheme: light) {
+      .glowText { animation-name: pulseL; }
+      .radial { stroke: #7C3AED; stroke-opacity: 0.12; }
+      .hline  { stroke: #7C3AED; stroke-opacity: 0.16; }
+      .horizon { stroke: #7C3AED; stroke-opacity: 0.28; }
+      .waveAp { stroke: #7C3AED; stroke-opacity: 0.30; }
+      .waveBp { stroke: #7C3AED; stroke-opacity: 0.22; }
+      .glowText { fill: #7C3AED; }
+      .nsA { stop-color: #1F2328; }
+      .nsB { stop-color: #7C3AED; }
+      .sub { fill: #1F2328; opacity: 0.62; }
+      .vpA { stop-color: #7C3AED; stop-opacity: 0.14; }
+      .ptA { stop-color: #7C3AED; }
+      .ptB { stop-color: #7C3AED; }
+      .pHead { fill: #7C3AED; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+
+  <!-- ====================== PERSPECTIVE GRID (bottom third) ====================== -->
+  <ellipse cx="500" cy="172" rx="300" ry="42" fill="url(#vpGlow)"/>
+
+  <g mask="url(#gridMask)">
+    <!-- converging radial lines (static) -->
+    <g class="radial">
+      <line x1="500" y1="172" x2="500" y2="262"/>
+      <line x1="500" y1="172" x2="531" y2="262"/>
+      <line x1="500" y1="172" x2="469" y2="262"/>
+      <line x1="500" y1="172" x2="566" y2="262"/>
+      <line x1="500" y1="172" x2="434" y2="262"/>
+      <line x1="500" y1="172" x2="610" y2="262"/>
+      <line x1="500" y1="172" x2="390" y2="262"/>
+      <line x1="500" y1="172" x2="667" y2="262"/>
+      <line x1="500" y1="172" x2="333" y2="262"/>
+      <line x1="500" y1="172" x2="746" y2="262"/>
+      <line x1="500" y1="172" x2="254" y2="262"/>
+      <line x1="500" y1="172" x2="870" y2="262"/>
+      <line x1="500" y1="172" x2="130" y2="262"/>
+      <line x1="500" y1="172" x2="1072" y2="262"/>
+      <line x1="500" y1="172" x2="-72" y2="262"/>
+      <line x1="500" y1="172" x2="1468" y2="262"/>
+      <line x1="500" y1="172" x2="-468" y2="262"/>
+    </g>
+    <!-- forward-scrolling horizontal lines (seamless: uniform 16px spacing, loop by 16px) -->
+    <g class="scroll">
+      <g class="hline">
+        <line x1="0" y1="156" x2="1000" y2="156"/>
+        <line x1="0" y1="172" x2="1000" y2="172"/>
+        <line x1="0" y1="188" x2="1000" y2="188"/>
+        <line x1="0" y1="204" x2="1000" y2="204"/>
+        <line x1="0" y1="220" x2="1000" y2="220"/>
+        <line x1="0" y1="236" x2="1000" y2="236"/>
+        <line x1="0" y1="252" x2="1000" y2="252"/>
+        <line x1="0" y1="268" x2="1000" y2="268"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- horizon line with a soft blurred double -->
+  <line class="horizon" x1="0" y1="172" x2="1000" y2="172" filter="url(#softBlur)" opacity="0.6"/>
+  <line class="horizon" x1="0" y1="172" x2="1000" y2="172"/>
+
+  <!-- ====================== SINE WAVES above the horizon ====================== -->
+  <g class="waveA">
+    <path class="waveAp" d="M -500 158 q 62.5 -22 125 0 t 125 0 t 125 0 t 125 0 t 125 0 t 125 0 t 125 0 t 125 0 t 125 0 t 125 0 t 125 0 t 125 0 t 125 0 t 125 0 t 125 0 t 125 0"/>
+  </g>
+  <g class="waveB">
+    <path class="waveBp" d="M -640 164 q 80 16 160 0 t 160 0 t 160 0 t 160 0 t 160 0 t 160 0 t 160 0 t 160 0 t 160 0 t 160 0 t 160 0"/>
+  </g>
+
+  <!-- ====================== CENTER TEXT ====================== -->
+  <!-- neon glow duplicate (blurred, pulsing) -->
+  <text class="name glowText" x="500" y="106" text-anchor="middle" filter="url(#neon)">METEHAN ULUSOY</text>
+  <!-- main text with gradient sweep -->
+  <text class="name" x="500" y="106" text-anchor="middle" fill="url(#nameGrad)">METEHAN ULUSOY</text>
+
+  <text class="sub" x="500" y="140" text-anchor="middle">AI ENGINEER &#183; LLM PIPELINES &#183; RAG &#183; EVALS</text>
+
+  <!-- ====================== SHOOTING PARTICLE (every ~7s) ====================== -->
+  <g opacity="0">
+    <line x1="-36" y1="0" x2="0" y2="0" stroke="url(#tailGrad)" stroke-width="1.6"/>
+    <circle class="pHead" cx="0" cy="0" r="2.8" filter="url(#dotGlow)"/>
+    <circle class="pHead" cx="0" cy="0" r="1.6"/>
+    <animateMotion path="M -60 26 L 1060 58" dur="7s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.04;0.18;1"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.04;0.06;0.15;0.18;1" dur="7s" repeatCount="indefinite"/>
+  </g>
+</svg>
