@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 800" role="img" aria-labelledby="title desc">
+  <title id="title">Metehan Ulusoy — Mobile builder skill tree</title>
+  <desc id="desc">A vertically arranged animated game skill tree where software, web and design, AI and machine learning, and automation are equal branches of the core quest to build and ship useful things.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111827"/><stop offset=".58" stop-color="#090E18"/><stop offset="1" stop-color="#070A11"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#32F5C4"/><stop offset=".5" stop-color="#4DA3FF"/><stop offset="1" stop-color="#FF4ECD"/></linearGradient>
+    <linearGradient id="coreFill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#132637"/><stop offset=".52" stop-color="#111827"/><stop offset="1" stop-color="#22142A"/></linearGradient>
+    <linearGradient id="coreEdge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#32F5C4"/><stop offset=".48" stop-color="#4DA3FF"/><stop offset="1" stop-color="#FF4ECD"/></linearGradient>
+    <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#4DA3FF" stroke-opacity=".05"/></pattern>
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 3.5H4" stroke="#EDF6FF" stroke-opacity=".018"/></pattern>
+    <filter id="glow" x="-250%" y="-250%" width="600%" height="600%"><feGaussianBlur stdDeviation="5"/></filter>
+    <clipPath id="clip"><rect x="1" y="1" width="718" height="798" rx="18"/></clipPath>
+    <g id="pixelCode" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"><path d="M-8-9l-10 9L-8 9M8-9l10 9L8 9M4-14L-4 14"/></g>
+    <g id="pixelWindow" fill="none" stroke="currentColor" stroke-width="3.5"><rect x="-18" y="-14" width="36" height="28" rx="2"/><path d="M-18-6h36"/><path d="M-12-10h2M-6-10h2" stroke-width="4"/><path d="M-12 1h10M-12 7H8"/></g>
+    <g id="pixelNodes" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M-13-8L0-14 13-8 11 8 0 14-11 8zM-13-8L0 0 13-8M0 0v14"/><circle cx="-13" cy="-8" r="3" fill="currentColor"/><circle cx="13" cy="-8" r="3" fill="currentColor"/><circle cy="14" r="3" fill="currentColor"/></g>
+    <g id="pixelGear" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M-4-17h8l2 6 6-2 5 6-4 5 4 5-5 7-6-3-2 7h-8l-2-7-6 3-5-7 4-5-4-5 5-6 6 2z"/><circle r="6"/></g>
+  </defs>
+  <style>
+    .panel{fill:url(#panel)}.grid{fill:url(#grid)}.scanlines{fill:url(#scanlines)}.border{fill:none;stroke:url(#edge);stroke-width:1.5}
+    .mono{font-family:"SFMono-Regular","Cascadia Code",Consolas,"Liberation Mono",Menlo,monospace}.top{font-size:16px;font-weight:700;letter-spacing:1.4px;fill:#C5D0DA}.micro{font-size:14px;font-weight:700;letter-spacing:1px;fill:#82909C}
+    .wire{fill:none;stroke:#2C4054;stroke-width:4;stroke-linecap:square}.wire-glow{fill:none;stroke:url(#edge);stroke-width:4;stroke-linecap:square;stroke-dasharray:1;animation:draw 6s ease-in-out infinite}
+    .core-shadow{fill:#4DA3FF;opacity:.16}.core{fill:url(#coreFill);stroke:url(#coreEdge);stroke-width:2.5}.core-kicker{font-size:15px;font-weight:800;letter-spacing:1.5px;fill:#32F5C4}.core-title{font-size:30px;font-weight:900;letter-spacing:.8px;fill:#EDF6FF}.core-copy{font-size:14px;font-weight:700;letter-spacing:1.1px;fill:#9AA8B6}
+    .node{fill:#0C1420;stroke:#334155;stroke-width:1.5}.node-edge{fill:none;stroke-width:3;stroke-linecap:square}.node-title{font-size:24px;font-weight:850;letter-spacing:.35px;fill:#EDF6FF}.node-copy{font-size:14px;font-weight:700;letter-spacing:.6px;fill:#82909C}
+    .status-bg{fill:#111C29}.status-text{font-size:12px;font-weight:850;letter-spacing:.8px}.software{color:#32F5C4;stroke:#32F5C4}.web{color:#FF4ECD;stroke:#FF4ECD}.ai{color:#4DA3FF;stroke:#4DA3FF}.auto{color:#FFD166;stroke:#FFD166}
+    .socket{fill:#080B12;stroke:#4DA3FF;stroke-width:2}.socket-on{fill:#32F5C4}.pulse{filter:url(#glow)}.pulse-dot{fill:#32F5C4}.float{animation:float 2.5s ease-in-out infinite}.float2{animation:float 2.5s .35s ease-in-out infinite}.float3{animation:float 2.5s .7s ease-in-out infinite}.float4{animation:float 2.5s 1.05s ease-in-out infinite}
+    .core-pulse{transform-box:fill-box;transform-origin:center;animation:corePulse 2.8s ease-out infinite}.blink{animation:blink 1.2s steps(1,end) infinite}.scan{animation:scan 8s ease-in-out infinite}
+    .footer{font-size:14px;font-weight:800;letter-spacing:.9px;fill:#A8B4C0}
+    @keyframes draw{0%,10%{stroke-dashoffset:1;opacity:.2}45%,75%{stroke-dashoffset:0;opacity:.9}100%{stroke-dashoffset:-1;opacity:.2}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+    @keyframes corePulse{0%{transform:scale(.78);opacity:.4}70%,100%{transform:scale(1.22);opacity:0}}@keyframes blink{0%,58%{opacity:1}59%,100%{opacity:.25}}@keyframes scan{0%,12%{transform:translateX(-200px);opacity:0}35%,65%{opacity:.14}88%,100%{transform:translateX(790px);opacity:0}}
+    @media(prefers-color-scheme:light){.panel{fill:#F6F8FA}.grid{opacity:.55}.scanlines{opacity:.12}.top{fill:#334155}.micro,.node-copy,.core-copy,.footer{fill:#64748B}.wire{stroke:#C7D2E0}.node{fill:#FFFFFF;stroke:#CBD5E1}.node-title,.core-title{fill:#172033}.status-bg{fill:#F1F5F9}.core{fill:#FFFFFF}.core-shadow{opacity:.1}.socket{fill:#FFFFFF}.border{opacity:.82}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important}.motion{display:none!important}}
+  </style>
+
+  <rect class="panel" x="1" y="1" width="718" height="798" rx="18"/>
+  <g clip-path="url(#clip)"><rect class="grid" x="1" y="1" width="718" height="798"/><rect class="scanlines" x="1" y="1" width="718" height="798"/><rect class="scan motion" x="-200" y="1" width="170" height="798" fill="#32F5C4" opacity="0"/></g>
+  <rect class="border" x="1" y="1" width="718" height="798" rx="18"/>
+
+  <g class="mono">
+    <text class="top" x="30" y="34">SKILL_TREE.MAP</text>
+    <rect x="189" y="19" width="105" height="22" rx="11" fill="#32F5C4" fill-opacity=".09" stroke="#32F5C4" stroke-opacity=".42"/>
+    <circle class="socket-on blink" cx="204" cy="30" r="3.5"/><text class="micro" x="216" y="33.5">4 ACTIVE</text>
+    <text class="top" x="690" y="34" text-anchor="end">GENERALIST</text>
+  </g>
+  <path d="M24 54H696" stroke="#334155"/>
+
+  <g aria-hidden="true">
+    <path class="wire" d="M360 232V272Q360 286 344 286H52V698"/>
+    <path class="wire" d="M52 340H80M52 448H80M52 556H80M52 664H80"/>
+    <path class="wire-glow" pathLength="1" d="M360 232V272Q360 286 344 286H52V698"/>
+    <path class="wire-glow" pathLength="1" d="M52 340H80M52 448H80M52 556H80M52 664H80"/>
+    <g class="motion pulse"><circle class="pulse-dot" r="5"><animateMotion dur="5s" repeatCount="indefinite" path="M360 232V272Q360 286 344 286H52V698"/></circle></g>
+    <circle class="socket" cx="52" cy="340" r="8"/><circle fill="#32F5C4" cx="52" cy="340" r="3.5"/>
+    <circle class="socket" cx="52" cy="448" r="8"/><circle fill="#FF4ECD" cx="52" cy="448" r="3.5"/>
+    <circle class="socket" cx="52" cy="556" r="8"/><circle fill="#4DA3FF" cx="52" cy="556" r="3.5"/>
+    <circle class="socket" cx="52" cy="664" r="8"/><circle fill="#FFD166" cx="52" cy="664" r="3.5"/>
+    <rect class="core-shadow core-pulse motion" x="181" y="82" width="358" height="166" rx="22"/>
+  </g>
+
+  <g class="mono">
+    <rect class="core" x="190" y="88" width="340" height="144" rx="18"/>
+    <text class="core-kicker" x="360" y="118" text-anchor="middle">CORE QUEST</text>
+    <text class="core-title" x="360" y="155" text-anchor="middle">BUILD &amp; SHIP</text>
+    <text class="core-title" x="360" y="186" text-anchor="middle">USEFUL THINGS</text>
+    <text class="core-copy" x="360" y="214" text-anchor="middle">CURIOSITY + CRAFT</text>
+  </g>
+
+  <g class="mono" transform="translate(80 300)">
+    <rect class="node" width="586" height="80" rx="10"/><path class="node-edge software" d="M0 14V0h14M572 0h14v14M0 66v14h14M572 80h14V66"/>
+    <g class="software" transform="translate(44 40)"><g class="float"><use href="#pixelCode"/></g></g>
+    <text class="node-title" x="86" y="33">SOFTWARE</text><text class="node-copy" x="86" y="55">APIs · SYSTEMS · TOOLS</text>
+    <g transform="translate(482 29)"><rect class="status-bg" width="78" height="22" rx="11"/><circle fill="#32F5C4" cx="13" cy="11" r="3.5"/><text class="status-text" x="25" y="14" fill="#32F5C4">ACTIVE</text></g>
+  </g>
+  <g class="mono" transform="translate(80 408)">
+    <rect class="node" width="586" height="80" rx="10"/><path class="node-edge web" d="M0 14V0h14M572 0h14v14M0 66v14h14M572 80h14V66"/>
+    <g class="web" transform="translate(44 40)"><g class="float2"><use href="#pixelWindow"/></g></g>
+    <text class="node-title" x="86" y="33">WEB + DESIGN</text><text class="node-copy" x="86" y="55">UI · MOTION · EXPERIENCES</text>
+    <g transform="translate(482 29)"><rect class="status-bg" width="78" height="22" rx="11"/><circle fill="#FF4ECD" cx="13" cy="11" r="3.5"/><text class="status-text" x="25" y="14" fill="#FF4ECD">ACTIVE</text></g>
+  </g>
+  <g class="mono" transform="translate(80 516)">
+    <rect class="node" width="586" height="80" rx="10"/><path class="node-edge ai" d="M0 14V0h14M572 0h14v14M0 66v14h14M572 80h14V66"/>
+    <g class="ai" transform="translate(44 40)"><g class="float3"><use href="#pixelNodes"/></g></g>
+    <text class="node-title" x="86" y="33">AI / ML</text><text class="node-copy" x="86" y="55">MODELS · SEARCH · DATA</text>
+    <g transform="translate(482 29)"><rect class="status-bg" width="78" height="22" rx="11"/><circle fill="#4DA3FF" cx="13" cy="11" r="3.5"/><text class="status-text" x="25" y="14" fill="#4DA3FF">ACTIVE</text></g>
+  </g>
+  <g class="mono" transform="translate(80 624)">
+    <rect class="node" width="586" height="80" rx="10"/><path class="node-edge auto" d="M0 14V0h14M572 0h14v14M0 66v14h14M572 80h14V66"/>
+    <g class="auto" transform="translate(44 40)"><g class="float4"><use href="#pixelGear"/></g></g>
+    <text class="node-title" x="86" y="33">AUTOMATION</text><text class="node-copy" x="86" y="55">WORKFLOWS · BOTS · GLUE</text>
+    <g transform="translate(482 29)"><rect class="status-bg" width="78" height="22" rx="11"/><circle fill="#FFD166" cx="13" cy="11" r="3.5"/><text class="status-text" x="25" y="14" fill="#FFD166">ACTIVE</text></g>
+  </g>
+
+  <path d="M82 736H638" stroke="#334155"/>
+  <g class="mono"><text class="footer" x="360" y="767" text-anchor="middle">BUILD → BREAK → LEARN → SHIP</text><circle fill="#32F5C4" cx="159" cy="764" r="3"/><circle fill="#FF4ECD" cx="561" cy="764" r="3"/></g>
+</svg>

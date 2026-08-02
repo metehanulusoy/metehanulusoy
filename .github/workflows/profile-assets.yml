@@ -1,4 +1,4 @@
-name: Refresh profile signal
+name: Refresh DEV ARCADE HUD
 
 on:
   schedule:
@@ -17,7 +17,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: profile-signal-${{ github.ref }}
+  group: dev-arcade-hud-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -34,13 +34,14 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Verify source and static project cards
+      - name: Verify source and arcade quest cards
         run: |
           python -m compileall -q scripts
           python scripts/build_project_cards.py --check
+          python scripts/build_arcade_project_cards.py --check
           python scripts/validate_assets.py
 
-      - name: Build live release ledger
+      - name: Build live player HUD
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USER_NAME: metehanulusoy
@@ -52,8 +53,8 @@ jobs:
       - name: Collect publishable assets
         run: |
           mkdir -p publish
-          cp assets/generated/terminal-card.svg publish/
-          cp assets/generated/terminal-card-mobile.svg publish/
+          cp assets/generated/player-hud-v1.svg publish/
+          cp assets/generated/player-hud-mobile-v1.svg publish/
 
       - name: Publish to the output branch
         uses: crazy-max/ghaction-github-pages@1d6ee9b181a81033a16bd707a1401afa978daab4 # v5.0.0
