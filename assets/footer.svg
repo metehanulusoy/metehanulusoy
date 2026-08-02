@@ -1,56 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 1000 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="thanks for scrolling — build something today">
-  <style>
-    .w1 { fill: #A855F7; fill-opacity: 0.22; animation: drift-l 16s linear infinite; }
-    .w2 { fill: #7C3AED; fill-opacity: 0.15; animation: drift-r 11s linear infinite; }
-    .msg {
-      font-family: "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;
-      font-size: 13px; letter-spacing: 1px; fill: #8B949E;
-      animation: breathe 6s ease-in-out infinite;
-    }
-    .p1 { fill: #C084FC; } .p2 { fill: #A855F7; }
-    @keyframes drift-l { to { transform: translateX(-250px); } }
-    @keyframes drift-r { to { transform: translateX(200px); } }
-    @keyframes breathe { 0%, 100% { opacity: .5; } 50% { opacity: .95; } }
-    @media (prefers-color-scheme: light) {
-      .w1 { fill: #7C3AED; fill-opacity: 0.16; }
-      .w2 { fill: #7C3AED; fill-opacity: 0.11; }
-      .msg { fill: #6E7781; }
-      .p1, .p2 { fill: #7C3AED; }
-    }
-    @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
-  </style>
-
-  <!-- closing message -->
-  <text class="msg" x="500" y="80" text-anchor="middle">thanks for scrolling — build something today</text>
-
-  <!-- rising particles (staggered SMIL, born in the waves, fading out) -->
-  <g>
-    <circle class="p1" cx="205" cy="140" r="1.6" opacity="0">
-      <animate attributeName="cy" values="140;68" dur="5.2s" begin="-1.1s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;.7;0" keyTimes="0;.3;1" dur="5.2s" begin="-1.1s" repeatCount="indefinite"/>
-    </circle>
-    <circle class="p2" cx="368" cy="142" r="2.1" opacity="0">
-      <animate attributeName="cy" values="142;74" dur="6.4s" begin="-3.7s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;.6;0" keyTimes="0;.3;1" dur="6.4s" begin="-3.7s" repeatCount="indefinite"/>
-    </circle>
-    <circle class="p1" cx="536" cy="138" r="1.3" opacity="0">
-      <animate attributeName="cy" values="138;62" dur="4.6s" begin="-2.3s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;.75;0" keyTimes="0;.3;1" dur="4.6s" begin="-2.3s" repeatCount="indefinite"/>
-    </circle>
-    <circle class="p2" cx="704" cy="141" r="1.8" opacity="0">
-      <animate attributeName="cy" values="141;70" dur="5.8s" begin="-0.4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;.65;0" keyTimes="0;.3;1" dur="5.8s" begin="-0.4s" repeatCount="indefinite"/>
-    </circle>
-    <circle class="p1" cx="843" cy="139" r="1.5" opacity="0">
-      <animate attributeName="cy" values="139;66" dur="5s" begin="-4.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;.7;0" keyTimes="0;.3;1" dur="5s" begin="-4.2s" repeatCount="indefinite"/>
-    </circle>
-  </g>
-
-  <!-- back wave: period 200, drifts right by exactly one period -->
-  <path class="w2" d="M-200,128 Q-150,114 -100,128 T0,128 T100,128 T200,128 T300,128 T400,128 T500,128 T600,128 T700,128 T800,128 T900,128 T1000,128 T1100,128 T1200,128 L1200,160 L-200,160 Z"/>
-
-  <!-- front wave: period 250, drifts left by exactly one period -->
-  <path class="w1" d="M0,120 Q62.5,102 125,120 T250,120 T375,120 T500,120 T625,120 T750,120 T875,120 T1000,120 T1125,120 T1250,120 L1250,160 L0,160 Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120" role="img" aria-label="End of signal — build, break, learn, ship">
+  <defs><linearGradient id="h" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#36F1CD" stop-opacity="0"/><stop offset=".5" stop-color="#36F1CD" stop-opacity=".28"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></linearGradient></defs>
+  <style>.mono{font-family:"SFMono-Regular","Cascadia Code",Consolas,"Liberation Mono",Menlo,monospace}.msg{font-size:11px;font-weight:600;letter-spacing:1.6px;fill:#82909C}.line{stroke:url(#h)}.dot{fill:#64E8C1;animation:p 3s ease-in-out infinite}@keyframes p{0%,100%{opacity:.3}50%{opacity:1}}@media(prefers-color-scheme:light){.msg{fill:#57606A}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}</style>
+  <path class="line" d="M120 36H880"/>
+  <circle class="dot" cx="500" cy="36" r="3"/>
+  <text class="msg mono" x="500" y="75" text-anchor="middle">END OF SIGNAL / BUILD · BREAK · LEARN · SHIP</text>
 </svg>

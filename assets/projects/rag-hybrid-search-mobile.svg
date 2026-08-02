@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 218" role="img" aria-label="HYBRID SEARCH RAG: Dense + BM25 + RRF retrieval with citation verification and IDK gate">
+  <title>HYBRID SEARCH RAG</title>
+  <desc>Dense + BM25 + RRF retrieval with citation verification and IDK gate</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101720"/><stop offset="1" stop-color="#080D14"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#34D399"/><stop offset="1" stop-color="#60A5FA"/></linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#34D399" stroke-opacity=".035"/></pattern>
+    <filter id="glow" x="-250%" y="-250%" width="600%" height="600%"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <style>
+    .panel{fill:url(#panel)}.edge{fill:none;stroke:url(#edge)}.grid{fill:url(#grid)}
+    .title{font:700 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, Roboto, sans-serif;letter-spacing:.2px;fill:#E6EDF3}.eye{font:650 8px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;letter-spacing:1.25px;fill:#34D399}
+    .body{font:400 11.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, Roboto, sans-serif;fill:#9DA7B3}.num{font:650 8px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;fill:#34D399}.signal{font:650 7.5px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;letter-spacing:.8px;fill:#9DA7B3}
+    .pill{fill:#34D399;fill-opacity:.075;stroke:#34D399;stroke-opacity:.26}.pill-text{font:650 8.5px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;fill:#B9C3CE}
+    .orb{animation:pulse 2.8s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+    @media(prefers-color-scheme:light){.panel{fill:#F6F8FA}.title{fill:#1F2328}.body,.signal{fill:#57606A}.pill-text{fill:#3F4852}.grid{opacity:.45}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+  <rect class="panel" x="1" y="1" width="358" height="216" rx="14"/><rect class="grid" x="1" y="1" width="358" height="216" rx="14"/><rect class="edge" x="1" y="1" width="358" height="216" rx="14"/>
+  <text class="num" x="20" y="24">// 05</text><circle cx="246" cy="21" r="2.5" fill="#34D399"/><circle cx="246" cy="21" r="7" fill="#34D399" opacity=".14" filter="url(#glow)"/><text class="signal" x="254" y="24">EVIDENCE / OK</text>
+  <text class="eye" x="20" y="52">RETRIEVE · RERANK · VERIFY</text><text class="title" x="20" y="81">HYBRID SEARCH RAG</text>
+  <text class="body" x="20" y="112">Dense + BM25 + RRF retrieval</text><text class="body" x="20" y="130">with citation verification and IDK gate</text>
+  <path d="M20 151H340" stroke="#34D399" stroke-opacity=".15"/><g transform="translate(20 171)"><rect class="pill" width="52" height="27" rx="13.5"/><text class="pill-text" x="26.0" y="18" text-anchor="middle">Python</text></g><g transform="translate(79 171)"><rect class="pill" width="52" height="27" rx="13.5"/><text class="pill-text" x="26.0" y="18" text-anchor="middle">RAG</text></g><g transform="translate(138 171)"><rect class="pill" width="52" height="27" rx="13.5"/><text class="pill-text" x="26.0" y="18" text-anchor="middle">Docker</text></g>
+  <g transform="translate(296 103)" stroke="#34D399" stroke-width="1.7" fill="none">
+          <path d="M-42-20L0-43 42-20 0 3Z"/><path d="M-42 0L0 23 42 0M-42 20L0 43 42 20" opacity=".62"/>
+          <circle class="orb" cx="0" cy="3" r="5" fill="#60A5FA" stroke="none"/>
+        </g>
+</svg>

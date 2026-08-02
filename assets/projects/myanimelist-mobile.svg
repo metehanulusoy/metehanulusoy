@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 218" role="img" aria-label="ANIMEVERSE: Track, discover and discuss anime through a social-first web experience">
+  <title>ANIMEVERSE</title>
+  <desc>Track, discover and discuss anime through a social-first web experience</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101720"/><stop offset="1" stop-color="#080D14"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#60A5FA"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#60A5FA" stroke-opacity=".035"/></pattern>
+    <filter id="glow" x="-250%" y="-250%" width="600%" height="600%"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <style>
+    .panel{fill:url(#panel)}.edge{fill:none;stroke:url(#edge)}.grid{fill:url(#grid)}
+    .title{font:700 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, Roboto, sans-serif;letter-spacing:.2px;fill:#E6EDF3}.eye{font:650 8px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;letter-spacing:1.25px;fill:#60A5FA}
+    .body{font:400 11.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, Roboto, sans-serif;fill:#9DA7B3}.num{font:650 8px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;fill:#60A5FA}.signal{font:650 7.5px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;letter-spacing:.8px;fill:#9DA7B3}
+    .pill{fill:#60A5FA;fill-opacity:.075;stroke:#60A5FA;stroke-opacity:.26}.pill-text{font:650 8.5px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;fill:#B9C3CE}
+    .orb{animation:pulse 2.8s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+    @media(prefers-color-scheme:light){.panel{fill:#F6F8FA}.title{fill:#1F2328}.body,.signal{fill:#57606A}.pill-text{fill:#3F4852}.grid{opacity:.45}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+  <rect class="panel" x="1" y="1" width="358" height="216" rx="14"/><rect class="grid" x="1" y="1" width="358" height="216" rx="14"/><rect class="edge" x="1" y="1" width="358" height="216" rx="14"/>
+  <text class="num" x="20" y="24">// 02</text><circle cx="246" cy="21" r="2.5" fill="#60A5FA"/><circle cx="246" cy="21" r="7" fill="#60A5FA" opacity=".14" filter="url(#glow)"/><text class="signal" x="254" y="24">SOCIAL / LIVE</text>
+  <text class="eye" x="20" y="52">SOCIAL ANIME PLATFORM</text><text class="title" x="20" y="81">ANIMEVERSE</text>
+  <text class="body" x="20" y="112">Track, discover and discuss anime</text><text class="body" x="20" y="130">through a social-first web experience</text>
+  <path d="M20 151H340" stroke="#60A5FA" stroke-opacity=".15"/><g transform="translate(20 171)"><rect class="pill" width="58" height="27" rx="13.5"/><text class="pill-text" x="29.0" y="18" text-anchor="middle">Next.js</text></g><g transform="translate(85 171)"><rect class="pill" width="64" height="27" rx="13.5"/><text class="pill-text" x="32.0" y="18" text-anchor="middle">Supabase</text></g><g transform="translate(156 171)"><rect class="pill" width="76" height="27" rx="13.5"/><text class="pill-text" x="38.0" y="18" text-anchor="middle">TypeScript</text></g>
+  <g transform="translate(296 103)" stroke="#60A5FA" stroke-width="1.7" fill="none">
+          <circle cx="0" cy="-28" r="12"/><circle cx="-34" cy="3" r="9"/><circle cx="34" cy="3" r="9"/>
+          <path d="M-22 39c2-17 10-25 22-25s20 8 22 25M-48 32c1-12 6-18 14-18 5 0 9 2 12 7M48 32c-1-12-6-18-14-18-5 0-9 2-12 7"/>
+          <circle class="orb" cx="0" cy="-28" r="4" fill="#8B5CF6" stroke="none"/>
+        </g>
+</svg>
