@@ -1,0 +1,92 @@
+[
+  {
+    "id": "01",
+    "slug": "metehanulusoy.github.io",
+    "title": "MOTION PORTFOLIO",
+    "eyebrow": "WEBGL · GSAP · LENIS",
+    "description": [
+      "A motion-led personal portfolio",
+      "with shader detail and graceful fallbacks"
+    ],
+    "tags": ["JavaScript", "GSAP", "WebGL"],
+    "signal": "MOTION / LIVE",
+    "accent": "#36F1CD",
+    "accent2": "#60A5FA",
+    "glyph": "WEB"
+  },
+  {
+    "id": "02",
+    "slug": "myanimelist",
+    "title": "ANIMEVERSE",
+    "eyebrow": "SOCIAL ANIME PLATFORM",
+    "description": [
+      "Track, discover and discuss anime",
+      "through a social-first web experience"
+    ],
+    "tags": ["Next.js", "Supabase", "TypeScript"],
+    "signal": "SOCIAL / LIVE",
+    "accent": "#60A5FA",
+    "accent2": "#8B5CF6",
+    "glyph": "SOCIAL"
+  },
+  {
+    "id": "03",
+    "slug": "semantic-caching",
+    "title": "SEMANTIC CACHING",
+    "eyebrow": "OPENAI-COMPATIBLE PROXY",
+    "description": [
+      "Streaming-safe semantic reuse",
+      "with adaptive TTL and observability"
+    ],
+    "tags": ["Python", "FastAPI", "Redis"],
+    "signal": "CACHE / HIT",
+    "accent": "#8B5CF6",
+    "accent2": "#36F1CD",
+    "glyph": "CACHE"
+  },
+  {
+    "id": "04",
+    "slug": "price-tracker-bot",
+    "title": "PRICE TRACKER BOT",
+    "eyebrow": "AUTOMATION · ALERTING",
+    "description": [
+      "Monitors Trendyol and Amazon prices",
+      "with Telegram alerts and history charts"
+    ],
+    "tags": ["Python", "Telegram", "Charts"],
+    "signal": "WATCH / ACTIVE",
+    "accent": "#F59E0B",
+    "accent2": "#FF7167",
+    "glyph": "BOT"
+  },
+  {
+    "id": "05",
+    "slug": "rag-hybrid-search",
+    "title": "HYBRID SEARCH RAG",
+    "eyebrow": "RETRIEVE · RERANK · VERIFY",
+    "description": [
+      "Dense + BM25 + RRF retrieval",
+      "with citation verification and IDK gate"
+    ],
+    "tags": ["Python", "RAG", "Docker"],
+    "signal": "EVIDENCE / OK",
+    "accent": "#34D399",
+    "accent2": "#60A5FA",
+    "glyph": "RAG"
+  },
+  {
+    "id": "06",
+    "slug": "n8n-workflow-to-python",
+    "title": "WORKFLOW TO PYTHON",
+    "eyebrow": "DEVELOPER TOOLING",
+    "description": [
+      "Turns n8n workflow JSON into",
+      "readable Python scripts in the browser"
+    ],
+    "tags": ["Automation", "n8n", "Codegen"],
+    "signal": "CONVERT / READY",
+    "accent": "#F472B6",
+    "accent2": "#60A5FA",
+    "glyph": "TOOL"
+  }
+]

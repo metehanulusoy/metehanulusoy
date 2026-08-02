@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
-"""Build the live-stats neofetch-style terminal card SVG.
+"""Build the live GitHub release-ledger SVG for the profile README.
 
 Fetches GitHub stats via the GraphQL API and renders
-assets/generated/terminal-card.svg (viewBox 0 0 560 340).
+assets/generated/terminal-card.svg (desktop) and terminal-card-mobile.svg.
 
 Auth:  env GITHUB_TOKEN, falling back to `gh auth token`.
 User:  env USER_NAME (default: metehanulusoy).
 
-On any API failure the script falls back to the cached JSON at
-assets/generated/stats-cache.json (written on every successful fetch),
-so CI never produces a broken card.
+By default, API failures fall back to assets/generated/stats-cache.json.
+With --require-live, an API failure exits before rendering; CI uses this mode
+so the output branch keeps its last valid snapshot.
 
-Python 3.12+, stdlib + requests only.
+Python 3.12+, standard library only (requests is used when available).
 """
 from __future__ import annotations
 
+import argparse
 import datetime as dt
 import json
 import os
@@ -25,7 +26,7 @@ from xml.sax.saxutils import escape
 
 try:
     import requests
-except ImportError:  # pragma: no cover - requests is in requirements.txt
+except ImportError:  # pragma: no cover - optional fast path
     requests = None
     import urllib.error
     import urllib.request
@@ -34,30 +35,26 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 GENERATED = REPO_ROOT / "assets" / "generated"
 CACHE_PATH = GENERATED / "stats-cache.json"
 SVG_PATH = GENERATED / "terminal-card.svg"
+MOBILE_SVG_PATH = GENERATED / "terminal-card-mobile.svg"
 API_URL = "https://api.github.com/graphql"
 
 DEFAULT_USER = "metehanulusoy"
 
 # ---------------------------------------------------------------- palette ---
-PURPLE = "#A855F7"
-PURPLE_DEEP = "#7C3AED"
-PURPLE_LIGHT = "#C084FC"
-BLUE = "#7AA2F7"
-PANEL = "#161B22"
-BORDER = "#30363D"
-TEXT = "#C9D1D9"
-MUTED = "#8B949E"
-GREEN = "#9ECE6A"
+MINT = "#36F1CD"
+MINT_LIGHT = "#64E8C1"
+VIOLET = "#8B5CF6"
+BLUE = "#60A5FA"
+PANEL = "#0B1119"
+BORDER = "#33404C"
+TEXT = "#EAF2F8"
+MUTED = "#82909C"
 L_PANEL = "#F6F8FA"
 L_BORDER = "#D0D7DE"
 L_TEXT = "#1F2328"
-L_MUTED = "#6E7781"
-L_GREEN = "#1A7F37"
-L_BLUE = "#4863D4"
+L_MUTED = "#57606A"
 
 MONO = '"SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace'
-
-SWATCHES = [BORDER, PURPLE_DEEP, PURPLE, PURPLE_LIGHT, BLUE, GREEN, TEXT, MUTED]
 
 LANG_SHORT = {
     "Jupyter Notebook": "Jupyter",
@@ -68,7 +65,7 @@ LANG_SHORT = {
 FALLBACK_STATS = {
     "user": DEFAULT_USER,
     "year": dt.datetime.now(dt.timezone.utc).year,
-    "created_year": 2020,
+    "created_year": 2025,
     "repos": 0,
     "stars": 0,
     "followers": 0,
@@ -234,177 +231,110 @@ def fetch_stats(token: str, login: str) -> dict:
 
 
 # ----------------------------------------------------------------- render ---
-ASCII_MU = [
-    "███╗   ███╗ ██╗   ██╗",
-    "████╗ ████║ ██║   ██║",
-    "██╔████╔██║ ██║   ██║",
-    "██║╚██╔╝██║ ██║   ██║",
-    "██║ ╚═╝ ██║ ╚██████╔╝",
-    "╚═╝     ╚═╝  ╚═════╝ ",
-]
-
-CHAR_W = 7.5  # mono char width at font-size 12.5 (0.6em)
-RIGHT_X = 200
-RIGHT_BUDGET = 45  # chars that fit between x=200 and the panel edge
-
-
-def fit_langs(langs: list[str], label: str) -> str:
-    """Join top languages, dropping from the end until the row fits."""
-    langs = list(langs)
-    while langs:
-        value = " · ".join(langs)
-        if len(label) + 1 + len(value) <= RIGHT_BUDGET:
-            return value
-        langs.pop()
-    return "—"
-
-
 def render_svg(s: dict) -> str:
     year = s["year"]
-    langs_label = "Langs:"
-    rows = [
-        ("OS:", "macOS · zsh · tokyonight"),
-        ("Role:", "AI Engineer"),
-        ("Repos:", f"{s['repos']} public"),
-        ("Stars:", f"★ {s['stars']:,}"),
-        ("Followers:", f"{s['followers']:,}"),
-        (f"Commits({year}):", f"{s['commits_year']:,}"),
-        ("Age:", f"{s['age_days']:,} days on GitHub"),
-        (langs_label, fit_langs(s["langs"], langs_label)),
+    metrics = [
+        ("PUBLIC REPOS", f"{s['repos']:,}"),
+        ("CONTRIBUTIONS", f"{s['contrib_all_time']:,}"),
+        (f"COMMITS / {year}", f"{s['commits_year']:,}"),
+        ("ACCOUNT SINCE", str(s["created_year"])),
     ]
-
-    # Reveal order: 6 logo lines, caption, location, user@host, separator,
-    # 8 stat rows, swatches, prompt  -> 20 staggered steps over ~4s of a 60s loop.
-    n_seq = 6 + 2 + 2 + len(rows) + 2
-    key_css = []
-    for i in range(n_seq):
-        t0 = 0.35 + i * 0.19
-        a = t0 / 60 * 100
-        b = (t0 + 0.30) / 60 * 100
-        key_css.append(
-            f"@keyframes s{i}{{0%,{a:.2f}%{{opacity:0}}{b:.2f}%,100%{{opacity:1}}}}"
-            f".q{i}{{animation:s{i} 60s linear infinite}}"
+    metric_groups = []
+    for index, (label, value) in enumerate(metrics):
+        x = 26 + index * 239
+        metric_groups.append(
+            f'<g class="metric m{index}" transform="translate({x} 60)">'
+            '<rect class="tile" width="226" height="88" rx="12"/>'
+            f'<text class="label" x="18" y="27">{escape(label)}</text>'
+            f'<text class="value" x="18" y="66">{escape(value)}</text>'
+            f'<text class="index" x="204" y="27" text-anchor="end">0{index + 1}</text>'
+            '</g>'
         )
 
-    style = f"""
-  text{{font-family:{MONO};}}
-  .panel{{fill:{PANEL};stroke:{BORDER};}}
-  .lab{{fill:{PURPLE};font-weight:600;}}
-  .val{{fill:{TEXT};}}
-  .muted{{fill:{MUTED};}}
-  .host{{fill:{BLUE};}}
-  .logo{{fill:{PURPLE};}}
-  .prompt{{fill:{GREEN};}}
-  .cursor{{fill:{TEXT};}}
-  .swb{{stroke:{BORDER};stroke-width:0.5;}}
-  .dashline{{stroke:{PURPLE_DEEP};stroke-width:1;stroke-dasharray:5 6;opacity:0.55;
-    animation:dashflow 3s linear infinite;}}
-  @keyframes dashflow{{to{{stroke-dashoffset:-22;}}}}
-  .blink{{animation:blink 1.1s linear infinite;}}
-  @keyframes blink{{0%,54%{{opacity:1}}55%,100%{{opacity:0}}}}
-  {"".join(key_css)}
-  @media (prefers-color-scheme: light){{
-    .panel{{fill:{L_PANEL};stroke:{L_BORDER};}}
-    .lab{{fill:{PURPLE_DEEP};}}
-    .val{{fill:{L_TEXT};}}
-    .muted{{fill:{L_MUTED};}}
-    .host{{fill:{L_BLUE};}}
-    .logo{{fill:{PURPLE_DEEP};}}
-    .prompt{{fill:{L_GREEN};}}
-    .cursor{{fill:{L_TEXT};}}
-    .swb{{stroke:{L_BORDER};}}
-  }}
-  @media (prefers-reduced-motion: reduce){{ * {{ animation: none !important; }} }}
-"""
-
-    parts: list[str] = []
-    parts.append(
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 340" role="img" '
-        f'aria-label="Neofetch-style terminal card with live GitHub stats for {escape(s["user"])}">'
-    )
-    parts.append(f"<style>{style}</style>")
-    # panel + title bar
-    parts.append('<rect class="panel" x="4" y="4" width="552" height="332" rx="12"/>')
-    parts.append(
-        '<circle cx="26" cy="27" r="5" fill="#FF5F57"/>'
-        '<circle cx="44" cy="27" r="5" fill="#FEBC2E"/>'
-        '<circle cx="62" cy="27" r="5" fill="#28C840"/>'
-    )
-    parts.append(
-        '<text class="muted" x="280" y="31" font-size="12" text-anchor="middle">'
-        "metehan@github: ~</text>"
-    )
-    # dash-flow separator under the header
-    parts.append('<path class="dashline" d="M20 46 H540" fill="none"/>')
-
-    seq = 0
-    # left column: ASCII MU logogram
-    y = 140
-    for line in ASCII_MU:
-        parts.append(
-            f'<text class="logo q{seq}" x="26" y="{y}" font-size="11" '
-            f'xml:space="preserve">{escape(line)}</text>'
+    lang_groups = []
+    x = 190
+    for index, language in enumerate(s.get("langs") or ["Python"]):
+        width = max(70, 26 + len(language) * 8)
+        lang_groups.append(
+            f'<g transform="translate({x} 172)"><rect class="pill" width="{width}" height="27" rx="13.5"/>'
+            f'<text class="pill-text" x="{width / 2:.1f}" y="18" text-anchor="middle">{escape(language)}</text></g>'
         )
-        seq += 1
-        y += 12
-    parts.append(
-        f'<text class="muted q{seq}" x="26" y="226" font-size="10">'
-        "// ai · engineer</text>"
-    )
-    seq += 1
-    parts.append(
-        f'<text class="muted q{seq}" x="26" y="244" font-size="10">'
-        "Trabzon, Türkiye</text>"
-    )
-    seq += 1
+        x += width + 10
 
-    # right column: user@host, separator, stat rows
-    parts.append(
-        f'<text class="q{seq}" x="{RIGHT_X}" y="78" font-size="13">'
-        f'<tspan class="lab">metehan</tspan><tspan class="muted">@</tspan>'
-        f'<tspan class="host">github</tspan></text>'
-    )
-    seq += 1
-    parts.append(
-        f'<text class="muted q{seq}" x="{RIGHT_X}" y="96" font-size="12.5" '
-        f'opacity="0.8">{"─" * 30}</text>'
-    )
-    seq += 1
-    y = 118
-    for label, value in rows:
-        parts.append(
-            f'<text class="q{seq}" x="{RIGHT_X}" y="{y}" font-size="12.5">'
-            f'<tspan class="lab">{escape(label)}</tspan>'
-            f'<tspan class="val" dx="7">{escape(value)}</tspan></text>'
-        )
-        seq += 1
-        y += 20
+    fetched = str(s.get("fetched_at", ""))[:10] or "cached"
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 230" role="img" aria-label="Live GitHub release ledger for {escape(s['user'])}: {s['repos']} public repositories and {s['contrib_all_time']} contributions">
+  <title>Release Ledger — live GitHub telemetry</title>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0E151E"/><stop offset="1" stop-color="{PANEL}"/></linearGradient>
+    <linearGradient id="edge" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1000" y2="0"><stop stop-color="{MINT}" stop-opacity=".72"/><stop offset=".55" stop-color="{BLUE}" stop-opacity=".5"/><stop offset="1" stop-color="{VIOLET}" stop-opacity=".72"/></linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="{MINT_LIGHT}" stroke-opacity=".035"/></pattern>
+    <filter id="glow" x="-300%" y="-300%" width="700%" height="700%"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <style>
+    text{{font-family:{MONO}}}.panel{{fill:url(#panel);stroke:{BORDER}}}.grid{{fill:url(#grid)}}
+    .header{{font-size:10px;font-weight:650;letter-spacing:1.5px;fill:{MUTED}}}.live{{fill:{MINT_LIGHT}}}
+    .tile{{fill:{MINT};fill-opacity:.035;stroke:{MINT};stroke-opacity:.13}}.label{{font-size:9px;font-weight:650;letter-spacing:1.15px;fill:{MUTED}}}
+    .value{{font-size:26px;font-weight:720;fill:{TEXT}}}.index{{font-size:8px;font-weight:650;fill:{MINT};opacity:.7}}
+    .pill{{fill:{MINT};fill-opacity:.07;stroke:{MINT};stroke-opacity:.2}}.pill-text{{font-size:10px;font-weight:650;fill:#BAC5CF}}
+    .signal{{fill:none;stroke:url(#edge);stroke-width:1.2;stroke-dasharray:4 10;animation:flow 4s linear infinite}}
+    .pulse{{animation:pulse 3s ease-in-out infinite}}.metric{{animation:reveal 30s ease-out infinite}}.m1{{animation-delay:.12s}}.m2{{animation-delay:.24s}}.m3{{animation-delay:.36s}}
+    @keyframes flow{{to{{stroke-dashoffset:-56}}}}@keyframes pulse{{0%,100%{{opacity:.35}}50%{{opacity:1}}}}@keyframes reveal{{0%{{opacity:0}}4%,100%{{opacity:1}}}}
+    @media(prefers-color-scheme:light){{.panel{{fill:{L_PANEL};stroke:{L_BORDER}}}.grid{{opacity:.5}}.header,.label{{fill:{L_MUTED}}}.value{{fill:{L_TEXT}}}.pill-text{{fill:#3F4852}}.tile{{fill:#FFFFFF;stroke-opacity:.22}}}}
+    @media(prefers-reduced-motion:reduce){{*{{animation:none!important}}.motion{{display:none}}}}
+  </style>
+  <rect class="panel" x="1" y="1" width="998" height="228" rx="16"/><rect class="grid" x="1" y="1" width="998" height="228" rx="16"/>
+  <text class="header" x="26" y="31">RELEASE LEDGER / LIVE GITHUB SIGNAL</text><circle class="live pulse" cx="275" cy="27.5" r="3"/>
+  <text class="header" x="974" y="31" text-anchor="end">SYNC / {escape(fetched)} UTC</text>
+  {''.join(metric_groups)}
+  <path class="signal" d="M26 211H974"/>
+  <text class="header" x="26" y="190">LANGUAGE VECTOR</text>
+  {''.join(lang_groups)}
+  <text class="header" x="974" y="190" text-anchor="end">{s['age_days']:,} DAYS ON GITHUB</text>
+  <g class="motion"><circle r="3" fill="{MINT}" filter="url(#glow)"><animateMotion dur="8s" repeatCount="indefinite" path="M26 211H974"/></circle><circle r="2.5" fill="{VIOLET}"><animateMotion dur="8s" begin="-4s" repeatCount="indefinite" path="M26 211H974"/></circle></g>
+</svg>"""
 
-    # swatch row: terminal palette featuring purples
-    sw = [
-        f'<rect class="swb" x="{RIGHT_X + i * 24}" y="272" width="16" height="16" '
-        f'rx="3" fill="{c}"/>'
-        for i, c in enumerate(SWATCHES)
+
+def render_mobile_svg(s: dict) -> str:
+    year = s["year"]
+    metrics = [
+        ("PUBLIC REPOS", f"{s['repos']:,}"),
+        ("CONTRIBUTIONS", f"{s['contrib_all_time']:,}"),
+        (f"COMMITS / {year}", f"{s['commits_year']:,}"),
+        ("ACCOUNT SINCE", str(s["created_year"])),
     ]
-    parts.append(f'<g class="q{seq}">{"".join(sw)}</g>')
-    seq += 1
+    groups = []
+    for index, (label, value) in enumerate(metrics):
+        x = 28 + (index % 2) * 278
+        y = 68 + (index // 2) * 128
+        groups.append(
+            f'<g transform="translate({x} {y})"><rect class="tile" width="266" height="112" rx="14"/>'
+            f'<text class="label" x="18" y="30">{escape(label)}</text><text class="value" x="18" y="76">{escape(value)}</text>'
+            f'<text class="index" x="242" y="30" text-anchor="end">0{index + 1}</text></g>'
+        )
 
-    # prompt line + blinking cursor
-    echo = f"{s['contrib_all_time']:,} contributions since {s['created_year']}"
-    cursor_x = 26 + (2 + len(echo)) * CHAR_W + 6
-    parts.append(
-        f'<g class="q{seq}">'
-        f'<text x="26" y="314" font-size="12.5"><tspan class="prompt">❯</tspan>'
-        f'<tspan class="val" dx="7">{escape(echo)}</tspan></text>'
-        f'<rect class="cursor blink" x="{cursor_x:.0f}" y="303" width="8" height="14" rx="1"/>'
-        "</g>"
-    )
-    parts.append("</svg>")
-    return "".join(parts)
+    languages = " / ".join(s.get("langs") or ["Python"])
+    fetched = str(s.get("fetched_at", ""))[:10] or "cached"
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 390" role="img" aria-label="Live GitHub release ledger for {escape(s['user'])}">
+  <title>Release Ledger — mobile</title>
+  <defs><linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0E151E"/><stop offset="1" stop-color="{PANEL}"/></linearGradient><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="{MINT_LIGHT}" stroke-opacity=".035"/></pattern></defs>
+  <style>text{{font-family:{MONO}}}.panel{{fill:url(#panel);stroke:{BORDER}}}.grid{{fill:url(#grid)}}.header{{font-size:11px;font-weight:650;letter-spacing:1.3px;fill:{MUTED}}}.live{{fill:{MINT_LIGHT};animation:p 3s ease-in-out infinite}}.tile{{fill:{MINT};fill-opacity:.035;stroke:{MINT};stroke-opacity:.17}}.label{{font-size:11px;font-weight:650;letter-spacing:1.1px;fill:{MUTED}}}.value{{font-size:34px;font-weight:720;fill:{TEXT}}}.index{{font-size:10px;font-weight:650;fill:{MINT}}}.lang{{font-size:12px;font-weight:650;letter-spacing:.8px;fill:#BAC5CF}}.line{{stroke:{MINT};stroke-opacity:.35;stroke-dasharray:4 10;animation:f 4s linear infinite}}@keyframes p{{0%,100%{{opacity:.35}}50%{{opacity:1}}}}@keyframes f{{to{{stroke-dashoffset:-56}}}}@media(prefers-color-scheme:light){{.panel{{fill:{L_PANEL};stroke:{L_BORDER}}}.grid{{opacity:.5}}.header,.label{{fill:{L_MUTED}}}.value{{fill:{L_TEXT}}}.tile{{fill:#FFF;stroke-opacity:.24}}.lang{{fill:#3F4852}}}}@media(prefers-reduced-motion:reduce){{*{{animation:none!important}}}}</style>
+  <rect class="panel" x="1" y="1" width="598" height="388" rx="18"/><rect class="grid" x="1" y="1" width="598" height="388" rx="18"/>
+  <text class="header" x="28" y="36">RELEASE LEDGER / LIVE</text><circle class="live" cx="210" cy="32" r="3.5"/><text class="header" x="572" y="36" text-anchor="end">{escape(fetched)}</text>
+  {''.join(groups)}
+  <text class="header" x="28" y="342">LANGUAGE VECTOR</text><text class="lang" x="28" y="366">{escape(languages)}</text><path class="line" d="M28 378H572"/>
+</svg>"""
 
 
 # ------------------------------------------------------------------- main ---
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--require-live",
+        action="store_true",
+        help="fail instead of rendering cached data when GitHub cannot be reached",
+    )
+    args = parser.parse_args()
+
     login = os.environ.get("USER_NAME", DEFAULT_USER).strip() or DEFAULT_USER
     GENERATED.mkdir(parents=True, exist_ok=True)
 
@@ -422,6 +352,10 @@ def main() -> int:
         except Exception as exc:
             print(f"[warn] GitHub API fetch failed: {exc}")
 
+    if stats is None and args.require_live:
+        print("[error] fresh GitHub telemetry required; leaving published snapshot unchanged")
+        return 2
+
     if stats is None:
         if CACHE_PATH.exists():
             try:
@@ -433,13 +367,17 @@ def main() -> int:
             print("[warn] no cache either; rendering placeholder values")
             stats = dict(FALLBACK_STATS)
 
-    svg = render_svg(stats)
-    SVG_PATH.write_text(svg, encoding="utf-8")
-    size = SVG_PATH.stat().st_size
-    print(f"[ok] wrote {SVG_PATH} ({size} bytes)")
-    if size >= 120_000:
-        print("[error] SVG exceeds 120KB budget")
-        return 1
+    rendered = {
+        SVG_PATH: render_svg(stats),
+        MOBILE_SVG_PATH: render_mobile_svg(stats),
+    }
+    for path, svg in rendered.items():
+        path.write_text(svg, encoding="utf-8")
+        size = path.stat().st_size
+        print(f"[ok] wrote {path} ({size} bytes)")
+        if size >= 120_000:
+            print(f"[error] {path.name} exceeds 120KB budget")
+            return 1
     return 0
 
 

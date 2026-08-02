@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" role="img" aria-label="MOTION PORTFOLIO: A motion-led personal portfolio with shader detail and graceful fallbacks">
+  <title>MOTION PORTFOLIO</title>
+  <desc>A motion-led personal portfolio with shader detail and graceful fallbacks</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101720"/><stop offset="1" stop-color="#080D14"/>
+    </linearGradient>
+    <linearGradient id="edge" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="520" y2="0" spreadMethod="reflect">
+      <stop offset="0" stop-color="#36F1CD" stop-opacity=".08"/>
+      <stop offset=".5" stop-color="#36F1CD" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#60A5FA" stop-opacity=".12"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#36F1CD" stroke-opacity=".035"/>
+    </pattern>
+    <filter id="glow" x="-250%" y="-250%" width="600%" height="600%"><feGaussianBlur stdDeviation="4"/></filter>
+  </defs>
+  <style>
+    .panel{fill:url(#panel)} .edge{fill:none;stroke:url(#edge);stroke-width:1.25}
+    .grid{fill:url(#grid)} .title{font:700 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, Roboto, sans-serif;letter-spacing:.4px;fill:#E6EDF3}
+    .eye{font:600 9.5px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;letter-spacing:1.7px;fill:#36F1CD}
+    .body{font:400 12.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, Roboto, sans-serif;fill:#9DA7B3}
+    .num{font:600 10px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;fill:#36F1CD} .signal{font:600 9px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;letter-spacing:1px;fill:#9DA7B3}
+    .pill{fill:#36F1CD;fill-opacity:.075;stroke:#36F1CD;stroke-opacity:.24}
+    .pill-text{font:600 9.5px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;fill:#B9C3CE}
+    .orb{animation:pulse 2.8s ease-in-out infinite} .scan{animation:scan 5s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+    @keyframes scan{0%,12%{transform:translateX(-520px);opacity:0}35%,65%{opacity:.55}88%,100%{transform:translateX(520px);opacity:0}}
+    @media (prefers-color-scheme:light){
+      .panel{fill:#F6F8FA} .title{fill:#1F2328} .body,.signal{fill:#57606A}
+      .pill-text{fill:#3F4852} .grid{opacity:.45}
+    }
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+  <rect class="panel" x="1" y="1" width="518" height="178" rx="14"/>
+  <rect class="grid" x="1" y="1" width="518" height="178" rx="14"/>
+  <rect class="edge" x="1" y="1" width="518" height="178" rx="14"/>
+  <rect class="scan" x="-120" y="1" width="120" height="178" fill="#36F1CD" opacity="0"/>
+  <text class="num" x="26" y="28">// 01</text>
+  <circle cx="394" cy="24" r="3" fill="#36F1CD"/><circle cx="394" cy="24" r="8" fill="#36F1CD" opacity=".14" filter="url(#glow)"/>
+  <text class="signal" x="404" y="28">MOTION / LIVE</text>
+  <text class="eye" x="26" y="51">WEBGL · GSAP · LENIS</text>
+  <text class="title" x="26" y="80">MOTION PORTFOLIO</text>
+  <text class="body" x="26" y="105">A motion-led personal portfolio</text>
+  <text class="body" x="26" y="123">with shader detail and graceful fallbacks</text>
+  <g transform="translate(26 142)"><rect class="pill" width="88" height="24" rx="12"/><text class="pill-text" x="44.0" y="16" text-anchor="middle">JavaScript</text></g><g transform="translate(122 142)"><rect class="pill" width="58" height="24" rx="12"/><text class="pill-text" x="29.0" y="16" text-anchor="middle">GSAP</text></g><g transform="translate(188 142)"><rect class="pill" width="58" height="24" rx="12"/><text class="pill-text" x="29.0" y="16" text-anchor="middle">WebGL</text></g>
+  <g transform="translate(438 100)" stroke="#36F1CD" stroke-width="1.7" fill="none">
+          <rect x="-48" y="-36" width="96" height="72" rx="10"/>
+          <path d="M-48-17h96M-36-27h2M-27-27h2M-18-27h2" opacity=".65"/>
+          <path d="M-30 16c10-25 21 25 31 0s21 25 31 0"/>
+          <circle class="orb" cx="32" cy="16" r="4.5" fill="#60A5FA" stroke="none"/>
+        </g>
+</svg>

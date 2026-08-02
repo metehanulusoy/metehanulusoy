@@ -1,213 +1,162 @@
 <!--
-  ██╗   ██╗██╗     ██╗   ██╗███████╗ ██████╗ ██╗   ██╗
-  ██║   ██║██║     ██║   ██║██╔════╝██╔═══██╗╚██╗ ██╔╝
-  ██║   ██║██║     ██║   ██║███████╗██║   ██║ ╚████╔╝
-  ██║   ██║██║     ██║   ██║╚════██║██║   ██║  ╚██╔╝
-  ╚██████╔╝███████╗╚██████╔╝███████║╚██████╔╝   ██║
-   ╚═════╝ ╚══════╝ ╚═════╝ ╚══════╝ ╚═════╝    ╚═╝
-  You found the source. Nice instinct.
-  If you are a human: everything animated on this page is hand-built SVG — view any asset in /assets.
+  SIGNAL LEDGER / SOURCE
+  The interface below is built from repository-native SVG and deterministic data.
+  Motion respects prefers-reduced-motion. No tracking pixels or third-party stat cards.
 -->
 
-<img src="assets/hero.svg" width="100%" alt="Metehan Ulusoy — AI Engineer" />
-
-
 <p align="center">
-  <a href="https://www.linkedin.com/in/metehan-ulusoy-1806b6223"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=1F1F23" alt="LinkedIn" /></a>
-  <a href="mailto:ulusoy.metehan03@gmail.com"><img src="https://img.shields.io/badge/Email-Reach%20out-A855F7?style=for-the-badge&logo=gmail&logoColor=white&labelColor=1F1F23" alt="Email" /></a>
-  <img src="https://img.shields.io/badge/Trabzon%2C%20T%C3%BCrkiye-%F0%9F%93%8D-1F1F23?style=for-the-badge" alt="Location" />
-  <img src="https://komarev.com/ghpvc/?username=metehanulusoy&color=A855F7&style=for-the-badge&label=PROFILE+VIEWS" alt="Profile views" />
-  <img src="https://img.shields.io/github/followers/metehanulusoy?style=for-the-badge&color=A855F7&labelColor=1F1F23" alt="Followers" />
+  <a href="https://metehanulusoy.github.io"><strong>PORTFOLIO ↗</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://www.linkedin.com/in/metehan-ulusoy-1806b6223"><strong>LINKEDIN ↗</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="mailto:ulusoy.metehan03@gmail.com"><strong>EMAIL ↗</strong></a>
 </p>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/ai-log.svg" width="100%" alt="Daily AI-generated status" />
-</p>
-
-<img src="assets/divider.svg" width="100%" alt="" />
-
-### About me
-
-- 🎯 Building **production-grade AI systems** — LLM gateways, RAG pipelines, eval harnesses, multi-agent orchestration
-- 🏦 Domain focus on **Banking & FinTech** — credit risk, fraud detection, compliance-aware chatbots
-- 🧠 **15-project AI Engineering portfolio** in progress: type-safe Python, mypy strict, ≥80 % test coverage on every repo
-- 🤖 This profile is partially **maintained by an AI pipeline** — the status line above is written daily by an LLM reading my commit activity, and every animation here is hand-built SVG living in [`/assets`](./assets)
-- ✉️ Open to AI Engineer roles (remote / EU / Turkey) — `ulusoy.metehan03@gmail.com`
-
-> [!TIP]
-> ✅ **Just shipped:** Project 06 — [Hybrid-Search RAG Pipeline](https://github.com/metehanulusoy/rag-hybrid-search) (dense + BM25 + RRF fusion + cross-encoder rerank + citation verification).
-> 🚧 **Now building:** Project 07 of 15 — [semantic caching layer](https://github.com/metehanulusoy/semantic-caching) (embedding-similarity response cache + TTL + cache-quality eval). Star the profile to follow new releases.
-
-<table width="100%">
-<tr>
-<td width="50%" align="center" valign="top">
-  <img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/terminal-card.svg" width="100%" alt="Live stats terminal" />
-</td>
-<td width="50%" align="center" valign="top">
-  <img src="https://streak-stats.demolab.com/?user=metehanulusoy&hide_border=true&background=00000000&ring=A855F7&fire=C084FC&currStreakNum=A855F7&currStreakLabel=A855F7&sideNums=8B949E&sideLabels=A855F7&dates=6B7280&stroke=A855F7&border_radius=10" alt="Contribution streak" /><br/>
-  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=metehanulusoy&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=A855F7&langs_count=8&cache_seconds=86400" alt="Top languages" />
-</td>
-</tr>
-</table>
-
-<img src="assets/divider.svg" width="100%" alt="" />
-
-### 🏆 Featured work
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/hero-mobile.svg">
+  <img src="assets/hero.svg" width="100%" alt="Metehan Ulusoy — building software, web experiences, AI systems and side projects">
+</picture>
 
 <p align="center">
-  <a href="https://github.com/metehanulusoy/llm-cost-autopilot">
-    <img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=llm-cost-autopilot&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=A855F7&icon_color=A855F7&cache_seconds=86400" alt="llm-cost-autopilot" />
-  </a>
-  <a href="https://github.com/metehanulusoy/failure-forensics">
-    <img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=failure-forensics&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=A855F7&icon_color=A855F7&cache_seconds=86400" alt="failure-forensics" />
-  </a>
-</p>
-<p align="center">
-  <a href="https://github.com/metehanulusoy/llm-arbitration">
-    <img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=llm-arbitration&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=A855F7&icon_color=A855F7&cache_seconds=86400" alt="llm-arbitration" />
-  </a>
-  <a href="https://github.com/metehanulusoy/self-healing-docs">
-    <img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=self-healing-docs&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=A855F7&icon_color=A855F7&cache_seconds=86400" alt="self-healing-docs" />
-  </a>
+  <sub>COMPUTER ENGINEERING · TÜRKİYE · BUILDING IN PUBLIC</sub>
 </p>
 
-### AI Engineering Portfolio &nbsp;<sub>15-project series</sub>
+<img src="assets/divider.svg" width="100%" alt="">
 
-> Each repo: production-shaped Python, FastAPI / Click CLI / GitHub Action, Pydantic v2, mypy strict, ruff lint, ≥ 80 % pytest coverage, Dockerfile, ADRs, MIT license. No real network calls in tests.
+## 00 / About
 
-| # | Project | What it does | Stack |
-|---|---|---|---|
-| 01 | [model-regression-detection](https://github.com/metehanulusoy/model-regression-detection) | CI/CD-style regression gate for LLM features. Async eval runner + LLM-as-judge + 7-run drift, PR comment bot, merge-block on critical regressions. | Python · Pydantic · OpenAI · GitHub Actions |
-| 02 | [llm-cost-autopilot](https://github.com/metehanulusoy/llm-cost-autopilot) | Multi-provider LLM gateway. sklearn complexity classifier routes each request to the cheapest acceptable model; async LLM-as-judge sampler verifies quality. **>50 % cost reduction vs all-gpt-4o.** | FastAPI · scikit-learn · OpenAI · Anthropic · Ollama |
-| 03 | [failure-forensics](https://github.com/metehanulusoy/failure-forensics) | Observability + auto root-cause analysis for multi-step AI pipelines. Decorator-based span tracing, parallel LLM-as-judge backward trace, atomic feedback-to-eval loop, Streamlit explorer. | FastAPI · OpenTelemetry · SQLite WAL · Streamlit |
-| 04 | [self-healing-docs](https://github.com/metehanulusoy/self-healing-docs) | GitHub Action that detects when code changes made docs stale, then opens an auto-fix PR or flags affected sections for review. Embedding-based code-to-docs link graph + LLM staleness verifier + style-preservation pass. | GitHub Actions · OpenAI embeddings · PyGithub · unidiff |
-| 05 | [llm-arbitration](https://github.com/metehanulusoy/llm-arbitration) | Multi-agent verdict synthesis. Three specialist critics on three different providers grade an output along distinct dimensions; pure disagreement detector + adjudicator agent produce a single confidence-scored verdict. | FastAPI · OpenAI · Anthropic · Ollama · LangGraph-style DAG |
-| 06 | [rag-hybrid-search](https://github.com/metehanulusoy/rag-hybrid-search) | Production-grade RAG pipeline. Multi-format ingestion, dense + BM25 retrieval with reciprocal-rank fusion, cross-encoder rerank, citation verification, and a retrieval-quality eval set. | FastAPI · sentence-transformers · BM25 · Docker |
+**Building things, breaking things, learning in public. AI, software & side projects.**
 
-> 07–15 in progress: semantic caching, text-to-SQL with guardrails, prompt A/B testing, LoRA fine-tuning, LLM gateway with rate limiting, AI feature flags, eval-set generators, multi-modal document processing, and an agent orchestration platform.
+I’m a Computer Engineering student who enjoys moving between software engineering, web experiences, AI/ML and automation. I don’t want one label to decide what I can build; I follow the problem, choose the tools and learn by shipping.
 
-### 🧬 How I build AI systems
+`software engineering` · `web + interaction` · `AI / ML` · `automation` · `side projects`
 
-```mermaid
-%%{init: {'theme':'base','themeVariables':{'primaryColor':'#1a1b27','primaryTextColor':'#c9d1d9','primaryBorderColor':'#A855F7','lineColor':'#A855F7','secondaryColor':'#24283b','tertiaryColor':'#16161e','fontFamily':'monospace','fontSize':'14px'}}}%%
-flowchart LR
-  D[📄 Docs / Data] --> C[Chunker]
-  C --> V[(Vector DB)]
-  Q[🔍 Query] --> H[Hybrid Retriever<br/>dense + BM25 + RRF]
-  V --> H
-  H --> X[Cross-encoder<br/>Reranker]
-  X --> G[🧠 LLM<br/>+ semantic cache]
-  G --> CV[Citation<br/>Verifier]
-  CV --> E{Eval Harness<br/>LLM-as-judge}
-  E -->|pass| O[✅ Ship]
-  E -->|fail| H
-  E -.->|drift alert| M[📊 Observability<br/>traces + forensics]
-  classDef hot fill:#2a1b3d,stroke:#A855F7,stroke-width:2px,color:#e0c7ff
-  class G,E hot
-```
+<img src="assets/divider.svg" width="100%" alt="">
 
-<img src="assets/divider.svg" width="100%" alt="" />
+## 01 / Live signal
 
-### Banking &amp; ML Projects
+<picture>
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/terminal-card-mobile.svg">
+  <img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/terminal-card.svg" width="100%" alt="Live GitHub release ledger with public repositories, contributions, commits and languages">
+</picture>
 
-| Project | What it does | Tech |
-|---|---|---|
-| [credit-risk-scoring](https://github.com/metehanulusoy/credit-risk-scoring) | Credit default prediction with SHAP explainability and banking metrics (KS, Gini, PSI). | XGBoost · scikit-learn · SHAP · FastAPI |
-| [fraud-detection-system](https://github.com/metehanulusoy/fraud-detection-system) | Real-time fraud detection — ML ensemble + rule-based alerts. | XGBoost · Isolation Forest · FastAPI |
-| [banking-chatbot-rag](https://github.com/metehanulusoy/banking-chatbot-rag) | RAG chatbot for Turkish banking FAQs with guardrails &amp; compliance. | LangChain · ChromaDB · FastAPI |
+<sub>Generated daily from GitHub’s API by a deterministic workflow. If the API is unavailable, the last valid snapshot stays online.</sub>
+
+<img src="assets/divider.svg" width="100%" alt="">
+
+## 02 / Selected builds
+
+Four projects, four different kinds of problem.
+
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/projects/metehanulusoy.github.io-mobile.svg">
+  <img src="assets/projects/metehanulusoy.github.io.svg" width="100%" alt="Motion Portfolio — a WebGL, GSAP and Lenis personal portfolio">
+</picture>
+<p align="right"><a href="https://github.com/metehanulusoy/metehanulusoy.github.io"><sub><strong>OPEN REPOSITORY ↗</strong></sub></a></p>
+
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/projects/myanimelist-mobile.svg">
+  <img src="assets/projects/myanimelist.svg" width="100%" alt="AnimeVerse — a social anime tracking platform built with Next.js and Supabase">
+</picture>
+<p align="right"><a href="https://github.com/metehanulusoy/myanimelist"><sub><strong>OPEN REPOSITORY ↗</strong></sub></a></p>
+
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/projects/semantic-caching-mobile.svg">
+  <img src="assets/projects/semantic-caching.svg" width="100%" alt="Semantic Caching — an OpenAI-compatible caching proxy with observability">
+</picture>
+<p align="right"><a href="https://github.com/metehanulusoy/semantic-caching"><sub><strong>OPEN REPOSITORY ↗</strong></sub></a></p>
+
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/projects/price-tracker-bot-mobile.svg">
+  <img src="assets/projects/price-tracker-bot.svg" width="100%" alt="Price Tracker Bot — Trendyol and Amazon monitoring with Telegram alerts">
+</picture>
+<p align="right"><a href="https://github.com/metehanulusoy/price-tracker-bot"><sub><strong>OPEN REPOSITORY ↗</strong></sub></a></p>
+
+<p align="right"><a href="https://github.com/metehanulusoy?tab=repositories"><strong>EXPLORE ALL REPOSITORIES →</strong></a></p>
+
+<img src="assets/divider.svg" width="100%" alt="">
+
+## 03 / The build loop
+
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/system-map-mobile.svg">
+  <img src="assets/system-map.svg" width="100%" alt="Build loop: idea, explore, design, build, test, break, learn and ship">
+</picture>
+
+The path is rarely linear. A failed test, awkward interface or wrong assumption is useful input for the next version.
+
+<img src="assets/divider.svg" width="100%" alt="">
+
+## 04 / What I explore
+
+- **Software engineering** — APIs, backend services, data flows and production-shaped systems.
+- **Web & interaction** — full-stack products, motion, responsive interfaces and creative frontend work.
+- **AI & machine learning** — retrieval, evaluation, model routing, computer vision and explainable ML.
+- **Tools & automation** — bots, workflow conversion, developer utilities and experiments that remove repetition.
+
+**Languages and tools I reach for:**<br>
+`Python` · `TypeScript` · `JavaScript` · `FastAPI` · `Next.js` · `Supabase` · `Docker` · `GitHub Actions` · `scikit-learn` · `GSAP`
 
 <details>
-<summary><b>📊 Credit risk model — evaluation snapshots</b></summary>
+<summary><strong>Project archive / more things I’ve built</strong></summary>
 
-<br/>
+### Web & product
 
-![Evaluation Dashboard](https://raw.githubusercontent.com/metehanulusoy/credit-risk-scoring/main/docs/evaluation_dashboard.png)
+- [AnimeVerse](https://github.com/metehanulusoy/myanimelist) — social anime discovery and tracking with Next.js + Supabase
+- [Motion Portfolio](https://github.com/metehanulusoy/metehanulusoy.github.io) — Lenis, GSAP and WebGL portfolio experience
+- [Portfolio + technical blog](https://github.com/metehanulusoy/metehanulusoy.dev) — bilingual Next.js, Tailwind and MDX project
 
-![SHAP Importance](https://raw.githubusercontent.com/metehanulusoy/credit-risk-scoring/main/docs/shap_importance.png)
+### AI systems
+
+- [Semantic Caching](https://github.com/metehanulusoy/semantic-caching) — streaming-aware, OpenAI-compatible cache proxy
+- [Hybrid Search RAG](https://github.com/metehanulusoy/rag-hybrid-search) — dense + BM25 retrieval, reranking and citation verification
+- [LLM Cost Autopilot](https://github.com/metehanulusoy/llm-cost-autopilot) — quality-aware multi-provider model routing
+- [Model Regression Detection](https://github.com/metehanulusoy/model-regression-detection) — evaluation gates for model and prompt changes
+- [Failure Forensics](https://github.com/metehanulusoy/failure-forensics) — trace-first root-cause analysis for AI pipelines
+- [Self-Healing Docs](https://github.com/metehanulusoy/self-healing-docs) — code-to-doc link graph and documentation drift repair
+- [LLM Arbitration](https://github.com/metehanulusoy/llm-arbitration) — multi-agent evaluation and confidence-aware adjudication
+- [Jarvis](https://github.com/metehanulusoy/jarvis) — privacy-focused local assistant powered by Ollama
+
+### Data, ML & FinTech
+
+- [BIST AI Investment Assistant](https://github.com/metehanulusoy/bist-ai-yatirim-asistani) — portfolio analysis and paper trading
+- [Credit Risk Scoring](https://github.com/metehanulusoy/credit-risk-scoring) — XGBoost, SHAP and banking metrics
+- [Fraud Detection System](https://github.com/metehanulusoy/fraud-detection-system) — ensemble model with rule-based alerts
+- [Banking Chatbot RAG](https://github.com/metehanulusoy/banking-chatbot-rag) — Turkish banking FAQ assistant with guardrails
+- [Garbage Classifier](https://github.com/metehanulusoy/garbage-classifier) — browser-based image classification with MobileNet
+
+### Tools & automation
+
+- [Price Tracker Bot](https://github.com/metehanulusoy/price-tracker-bot) — product monitoring, charts and Telegram alerts
+- [n8n Workflow to Python](https://github.com/metehanulusoy/n8n-workflow-to-python) — browser-based workflow conversion
+- [Claude Recipes](https://github.com/metehanulusoy/claude-recipes) — documented skills, agents, hooks and MCP configurations
+- [Awesome n8n Workflows](https://github.com/metehanulusoy/awesome-n8n-workflows) — searchable automation workflow collection
 
 </details>
 
-<details>
-<summary><b>🧰 Side projects &amp; experiments</b></summary>
+<img src="assets/divider.svg" width="100%" alt="">
 
-<br/>
+## 05 / Engineering defaults
 
-| Project | Description |
-|---|---|
-| [claude-recipes](https://github.com/metehanulusoy/claude-recipes) | Copy-paste-ready skills, subagents, hooks &amp; MCP configs for Claude Code — each one explained (EN/TR). |
-| [pdf-rag-app](https://github.com/metehanulusoy/pdf-rag-app) | AI-powered PDF Q&amp;A system with RAG &amp; OpenAI. |
-| [awesome-n8n-workflows](https://github.com/metehanulusoy/awesome-n8n-workflows) | 2 055 production-ready n8n automation templates. |
-| [price-tracker-bot](https://github.com/metehanulusoy/price-tracker-bot) | Price tracking bot for Trendyol &amp; Amazon with Telegram alerts. |
-
-</details>
-
-<img src="assets/divider.svg" width="100%" alt="" />
-
-### Tech I work with
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=python,fastapi,docker,sklearn,postgres,sqlite,redis,git,githubactions,linux&theme=dark" alt="Stack icons" />
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Pydantic-A855F7?style=for-the-badge&logo=pydantic&logoColor=white&labelColor=1F1F23" alt="Pydantic" />
-  <img src="https://img.shields.io/badge/ruff-A855F7?style=for-the-badge&logo=ruff&logoColor=white&labelColor=1F1F23" alt="ruff" />
-  <img src="https://img.shields.io/badge/mypy--strict-A855F7?style=for-the-badge&labelColor=1F1F23" alt="mypy" />
-  <img src="https://img.shields.io/badge/pytest-A855F7?style=for-the-badge&logo=pytest&logoColor=white&labelColor=1F1F23" alt="pytest" />
-  <img src="https://img.shields.io/badge/XGBoost-A855F7?style=for-the-badge&labelColor=1F1F23" alt="XGBoost" />
-  <img src="https://img.shields.io/badge/LangChain-A855F7?style=for-the-badge&logo=langchain&logoColor=white&labelColor=1F1F23" alt="LangChain" />
-  <img src="https://img.shields.io/badge/OpenAI-A855F7?style=for-the-badge&logo=openai&logoColor=white&labelColor=1F1F23" alt="OpenAI" />
-  <img src="https://img.shields.io/badge/Anthropic-A855F7?style=for-the-badge&logo=anthropic&logoColor=white&labelColor=1F1F23" alt="Anthropic" />
-  <img src="https://img.shields.io/badge/Ollama-A855F7?style=for-the-badge&logo=ollama&logoColor=white&labelColor=1F1F23" alt="Ollama" />
-  <img src="https://img.shields.io/badge/OpenTelemetry-A855F7?style=for-the-badge&logo=opentelemetry&logoColor=white&labelColor=1F1F23" alt="OpenTelemetry" />
-</p>
-
-### Engineering standards I default to
-
-```diff
-+ Type-safe Python (Pydantic v2 + mypy --strict on every repo)
-+ ≥80% pytest coverage with httpx.MockTransport — no real network calls in CI
-+ Conventional commits, ADRs ("Why" + "Trade-offs" + "Revisit if")
-+ Async-first I/O (asyncio + httpx + tenacity exponential backoff)
-+ Structured JSON logging (structlog) with stable event names
-+ Dockerfile + docker-compose + Makefile + GitHub Actions matrix py3.11/3.12
-- No untyped public APIs · No secrets in commits · No flaky tests
+```text
+01  Start with the problem, not the fashionable tool.
+02  Keep the architecture as simple as the constraints allow.
+03  Test failure-prone paths and make errors observable.
+04  Design for real screens, keyboard users and reduced motion.
+05  Document decisions, trade-offs and the next honest improvement.
+06  Ship, listen, revise.
 ```
 
-<img src="assets/divider.svg" width="100%" alt="" />
+## Open channel
 
-### 📈 The contribution observatory
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/profile-3d-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/profile-3d-light.svg" />
-    <img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/profile-3d-dark.svg" width="100%" alt="3D contribution graph" />
-  </picture>
-</p>
-
-#### 🐍 Watch my contributions get eaten
+I’m open to learning, collaborating and software / AI internship opportunities. If you’re building something thoughtful—or just want to compare notes—say hello.
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/snake-light.svg" />
-    <img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/snake-dark.svg" alt="Contribution snake" />
-  </picture>
+  <a href="mailto:ulusoy.metehan03@gmail.com"><strong>EMAIL ME</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://www.linkedin.com/in/metehan-ulusoy-1806b6223"><strong>CONNECT ON LINKEDIN</strong></a>
 </p>
 
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=metehanulusoy&bg_color=00000000&color=A855F7&line=A855F7&point=C084FC&area=true&area_color=A855F7&hide_border=true&custom_title=Contribution%20Activity&radius=10" width="100%" alt="Contribution activity graph" />
-</p>
+<img src="assets/footer.svg" width="100%" alt="Build, break, learn, ship">
 
-### Connect
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/metehan-ulusoy-1806b6223"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="https://github.com/metehanulusoy"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
-  <a href="mailto:ulusoy.metehan03@gmail.com"><img src="https://img.shields.io/badge/Email-A855F7?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-</p>
-
-<img src="assets/footer.svg" width="100%" alt="" />
-
-<p align="center"><sub>Every animation on this page is hand-built SVG — no templates. Profile partially maintained by an AI pipeline · co-built with <b>Claude</b></sub></p>
+<p align="center"><sub>Designed and built as repository-native SVG · no profile-view trackers · motion respects reduced-motion preferences</sub></p>

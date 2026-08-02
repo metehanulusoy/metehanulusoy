@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 218" role="img" aria-label="MOTION PORTFOLIO: A motion-led personal portfolio with shader detail and graceful fallbacks">
+  <title>MOTION PORTFOLIO</title>
+  <desc>A motion-led personal portfolio with shader detail and graceful fallbacks</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101720"/><stop offset="1" stop-color="#080D14"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#36F1CD"/><stop offset="1" stop-color="#60A5FA"/></linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#36F1CD" stroke-opacity=".035"/></pattern>
+    <filter id="glow" x="-250%" y="-250%" width="600%" height="600%"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <style>
+    .panel{fill:url(#panel)}.edge{fill:none;stroke:url(#edge)}.grid{fill:url(#grid)}
+    .title{font:700 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, Roboto, sans-serif;letter-spacing:.2px;fill:#E6EDF3}.eye{font:650 8px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;letter-spacing:1.25px;fill:#36F1CD}
+    .body{font:400 11.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, Roboto, sans-serif;fill:#9DA7B3}.num{font:650 8px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;fill:#36F1CD}.signal{font:650 7.5px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;letter-spacing:.8px;fill:#9DA7B3}
+    .pill{fill:#36F1CD;fill-opacity:.075;stroke:#36F1CD;stroke-opacity:.26}.pill-text{font:650 8.5px "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;fill:#B9C3CE}
+    .orb{animation:pulse 2.8s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+    @media(prefers-color-scheme:light){.panel{fill:#F6F8FA}.title{fill:#1F2328}.body,.signal{fill:#57606A}.pill-text{fill:#3F4852}.grid{opacity:.45}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+  <rect class="panel" x="1" y="1" width="358" height="216" rx="14"/><rect class="grid" x="1" y="1" width="358" height="216" rx="14"/><rect class="edge" x="1" y="1" width="358" height="216" rx="14"/>
+  <text class="num" x="20" y="24">// 01</text><circle cx="246" cy="21" r="2.5" fill="#36F1CD"/><circle cx="246" cy="21" r="7" fill="#36F1CD" opacity=".14" filter="url(#glow)"/><text class="signal" x="254" y="24">MOTION / LIVE</text>
+  <text class="eye" x="20" y="52">WEBGL · GSAP · LENIS</text><text class="title" x="20" y="81">MOTION PORTFOLIO</text>
+  <text class="body" x="20" y="112">A motion-led personal portfolio</text><text class="body" x="20" y="130">with shader detail and graceful fallbacks</text>
+  <path d="M20 151H340" stroke="#36F1CD" stroke-opacity=".15"/><g transform="translate(20 171)"><rect class="pill" width="76" height="27" rx="13.5"/><text class="pill-text" x="38.0" y="18" text-anchor="middle">JavaScript</text></g><g transform="translate(103 171)"><rect class="pill" width="52" height="27" rx="13.5"/><text class="pill-text" x="26.0" y="18" text-anchor="middle">GSAP</text></g><g transform="translate(162 171)"><rect class="pill" width="52" height="27" rx="13.5"/><text class="pill-text" x="26.0" y="18" text-anchor="middle">WebGL</text></g>
+  <g transform="translate(296 103)" stroke="#36F1CD" stroke-width="1.7" fill="none">
+          <rect x="-48" y="-36" width="96" height="72" rx="10"/>
+          <path d="M-48-17h96M-36-27h2M-27-27h2M-18-27h2" opacity=".65"/>
+          <path d="M-30 16c10-25 21 25 31 0s21 25 31 0"/>
+          <circle class="orb" cx="32" cy="16" r="4.5" fill="#60A5FA" stroke="none"/>
+        </g>
+</svg>
