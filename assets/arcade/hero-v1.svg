@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+  <title id="title">Metehan Ulusoy — Dev Arcade</title>
+  <desc id="desc">A playful developer arcade interface with a pixel character running through software, web, AI and automation quests.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111827"/><stop offset=".55" stop-color="#090E18"/><stop offset="1" stop-color="#070A11"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#32F5C4"/><stop offset=".48" stop-color="#4DA3FF"/><stop offset="1" stop-color="#FF4ECD"/></linearGradient>
+    <linearGradient id="titleFill" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#EDF6FF"/><stop offset=".62" stop-color="#EDF6FF"/><stop offset="1" stop-color="#32F5C4"/></linearGradient>
+    <linearGradient id="portal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FF4ECD" stop-opacity=".35"/><stop offset="1" stop-color="#8B5CF6" stop-opacity=".04"/></linearGradient>
+    <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#4DA3FF" stroke-opacity=".055"/></pattern>
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 3.5H4" stroke="#EDF6FF" stroke-opacity=".018"/></pattern>
+    <filter id="glow" x="-250%" y="-250%" width="600%" height="600%"><feGaussianBlur stdDeviation="4"/></filter>
+    <clipPath id="clip"><rect x="1" y="1" width="998" height="438" rx="18"/></clipPath>
+    <clipPath id="sceneClip"><rect x="410" y="106" width="548" height="225"/></clipPath>
+    <g id="playerSprite">
+      <rect x="-13" y="-31" width="26" height="22" rx="3" fill="#FFD166" stroke="#080B12" stroke-width="3"/>
+      <rect x="-8" y="-25" width="4" height="4" fill="#080B12"/><rect x="4" y="-25" width="4" height="4" fill="#080B12"/>
+      <path d="M-7-16h14" stroke="#080B12" stroke-width="3"/>
+      <path d="M-16-7h32v25h-32z" fill="#4DA3FF" stroke="#080B12" stroke-width="3"/>
+      <path d="M-10 1l7 6-7 6M10 1L3 7l7 6" fill="none" stroke="#EDF6FF" stroke-width="2"/>
+      <path class="leg-a" d="M-9 18v13h-8M9 18v13h8" fill="none" stroke="#32F5C4" stroke-width="6" stroke-linecap="square"/>
+      <path d="M-16-2h-8v14M16-2h8v14" fill="none" stroke="#FF4ECD" stroke-width="5"/>
+    </g>
+    <g id="bugSprite" fill="#FF6B6B" stroke="#080B12" stroke-width="2">
+      <rect x="-11" y="-10" width="22" height="20" rx="4"/><rect x="-6" y="-5" width="4" height="4" fill="#080B12"/><rect x="2" y="-5" width="4" height="4" fill="#080B12"/>
+      <path d="M-11-5h-8M11-5h8M-11 4h-8M11 4h8M-6-10l-5-7M6-10l5-7" fill="none" stroke="#FF6B6B" stroke-width="4"/>
+    </g>
+  </defs>
+  <style>
+    .panel{fill:url(#panel)}.border{fill:none;stroke:url(#edge);stroke-width:1.5}.grid{fill:url(#grid)}.scanlines{fill:url(#scanlines)}
+    .mono{font-family:"SFMono-Regular","Cascadia Code",Consolas,"Liberation Mono",Menlo,monospace}.sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Ubuntu,Roboto,sans-serif}
+    .micro{font-size:9px;font-weight:700;letter-spacing:1.5px;fill:#82909C}.top{font-size:9.5px;font-weight:700;letter-spacing:1.5px;fill:#C5D0DA}
+    .name{font-size:51px;font-weight:850;letter-spacing:1px;fill:url(#titleFill)}.shadow{font-size:51px;font-weight:850;letter-spacing:1px;fill:#FF4ECD;opacity:.24}
+    .tag{font-size:11px;font-weight:700;letter-spacing:1.25px;fill:#A8B4C0}.chip{fill:#101B28;stroke:#32F5C4;stroke-opacity:.42}.chip2{fill:#171226;stroke:#FF4ECD;stroke-opacity:.42}.chiptext{font-size:8.5px;font-weight:700;letter-spacing:.8px;fill:#C9D4DE}
+    .stat{fill:#0C1420;stroke:#334155}.stat-l{font-size:8px;font-weight:700;letter-spacing:1px;fill:#718092}.stat-v{font-size:11px;font-weight:800;fill:#EDF6FF}
+    .screen{fill:#080D16;stroke:#334155}.screen-grid{fill:url(#grid);opacity:.8}.platform{fill:#111A27;stroke:#4DA3FF;stroke-width:2}.platform2{fill:#151224;stroke:#FF4ECD;stroke-width:2}
+    .platform-text{font-size:8px;font-weight:750;letter-spacing:1px;fill:#C7D2DC}.coin{fill:#FFD166;stroke:#080B12;stroke-width:2}.coin-text{font-size:7px;font-weight:900;fill:#080B12}
+    .code{font-size:8px;font-weight:650;fill:#526174}.portal{fill:url(#portal);stroke:#FF4ECD;stroke-width:2;stroke-dasharray:4 5}.portal-text{font-size:8px;font-weight:800;letter-spacing:1px;fill:#FF9AE6}
+    .status{font-size:9px;font-weight:750;letter-spacing:1.3px;fill:#B8C4CE}.mint{fill:#32F5C4}.yellow{fill:#FFD166}.pink{fill:#FF4ECD}
+    .scan{animation:scan 7s ease-in-out infinite}.blink{animation:blink 1.1s steps(1,end) infinite}.coin1{animation:coin 1.7s ease-in-out infinite}.coin2{animation:coin 1.7s .35s ease-in-out infinite}.coin3{animation:coin 1.7s .7s ease-in-out infinite}
+    .bug{transform-box:fill-box;transform-origin:center;animation:bug 1.1s steps(2,end) infinite}.portal-ring{transform-box:fill-box;transform-origin:center;animation:ring 5s linear infinite}.float-a{animation:floatA 7s linear infinite}.float-b{animation:floatB 9s -3s linear infinite}.leg-a{animation:legs .32s steps(2,end) infinite}.runner{transform:translate(467px,264px);animation:runner 9s linear infinite}
+    .static-motion{display:none}
+    @keyframes scan{0%,12%{transform:translateX(-240px);opacity:0}35%,65%{opacity:.18}88%,100%{transform:translateX(460px);opacity:0}}
+    @keyframes blink{0%,55%{opacity:1}56%,100%{opacity:.25}}@keyframes coin{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    @keyframes bug{0%{transform:translateY(0) rotate(-3deg)}100%{transform:translateY(-5px) rotate(3deg)}}@keyframes ring{to{stroke-dashoffset:-54}}
+    @keyframes floatA{from{transform:translateX(0)}to{transform:translateX(-190px)}}@keyframes floatB{from{transform:translateX(0)}to{transform:translateX(-240px)}}@keyframes legs{0%{stroke-dasharray:18 10}100%{stroke-dasharray:8 6}}@keyframes runner{0%{transform:translate(467px,264px)}18%{transform:translate(528px,246px)}34%{transform:translate(624px,238px)}52%{transform:translate(681px,273px)}69%{transform:translate(758px,273px)}84%{transform:translate(839px,237px)}100%{transform:translate(894px,237px)}}
+    @media(prefers-color-scheme:light){.panel{fill:#F6F8FA}.screen{fill:#FFFFFF}.screen-grid{opacity:.45}.name{fill:#172033}.shadow{fill:#FF4ECD;opacity:.15}.tag,.top,.status{fill:#475569}.micro,.stat-l,.code{fill:#64748B}.chip,.stat{fill:#FFFFFF}.chip2{fill:#FFF7FD}.chiptext,.stat-v,.platform-text{fill:#263241}.platform{fill:#F4F9FF}.platform2{fill:#FFF5FC}.scanlines{opacity:.15}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important}.motion{display:none!important}.static-motion{display:inline}}
+  </style>
+  <rect class="panel" x="1" y="1" width="998" height="438" rx="18"/>
+  <g clip-path="url(#clip)"><rect class="grid" x="1" y="1" width="998" height="438"/><rect class="scanlines" x="1" y="1" width="998" height="438"/><rect class="scan motion" x="-250" y="1" width="220" height="438" fill="#32F5C4" opacity="0"/></g>
+  <rect class="border" x="1" y="1" width="998" height="438" rx="18"/>
+  <g class="mono">
+    <text class="top" x="34" y="31">DEV_ARCADE.EXE</text><rect x="160" y="19" width="60" height="18" rx="9" fill="#32F5C4" fill-opacity=".1" stroke="#32F5C4" stroke-opacity=".45"/><circle class="mint blink" cx="173" cy="28" r="3"/><text class="micro" x="182" y="31">ONLINE</text>
+    <text class="top" x="966" y="31" text-anchor="end">PLAYER 01  /  UTC+3</text>
+  </g>
+  <path d="M26 48H974" stroke="#334155"/>
+  <g class="sans">
+    <text class="micro mono" x="42" y="83">SELECT PLAYER  /  BUILDER MODE</text>
+    <text class="shadow" x="46" y="137">METEHAN</text><text class="name" x="42" y="133">METEHAN</text>
+    <text class="shadow" x="46" y="191">ULUSOY</text><text class="name" x="42" y="187">ULUSOY</text>
+    <text class="tag mono" x="43" y="218">BUILDING THINGS. BREAKING THINGS.</text><text class="tag mono" x="43" y="236">LEARNING IN PUBLIC.</text>
+  </g>
+  <g class="mono">
+    <g transform="translate(42 258)"><rect class="chip" width="91" height="27" rx="5"/><text class="chiptext" x="45.5" y="17.5" text-anchor="middle">SOFTWARE</text></g>
+    <g transform="translate(141 258)"><rect class="chip2" width="116" height="27" rx="5"/><text class="chiptext" x="58" y="17.5" text-anchor="middle">WEB + DESIGN</text></g>
+    <g transform="translate(42 293)"><rect class="chip2" width="91" height="27" rx="5"/><text class="chiptext" x="45.5" y="17.5" text-anchor="middle">AI / ML</text></g>
+    <g transform="translate(141 293)"><rect class="chip" width="116" height="27" rx="5"/><text class="chiptext" x="58" y="17.5" text-anchor="middle">AUTOMATION</text></g>
+    <g transform="translate(42 343)"><rect class="stat" width="98" height="48" rx="7"/><text class="stat-l" x="12" y="18">LEVEL</text><text class="stat-v" x="12" y="36">03 / CENG</text></g>
+    <g transform="translate(149 343)"><rect class="stat" width="108" height="48" rx="7"/><text class="stat-l" x="12" y="18">CLASS</text><text class="stat-v" x="12" y="36">GENERALIST</text></g>
+    <g transform="translate(266 343)"><rect class="stat" width="98" height="48" rx="7"/><text class="stat-l" x="12" y="18">MODE</text><text class="stat-v" x="12" y="36">BUILD</text></g>
+  </g>
+  <g class="mono">
+    <rect class="screen" x="409" y="69" width="550" height="322" rx="11"/><rect class="screen-grid" x="410" y="70" width="548" height="320" rx="10"/>
+    <path d="M425 105H943" stroke="#273548"/><text class="micro" x="427" y="94">SIDE QUEST / SHIP SOMETHING</text><text class="micro" x="941" y="94" text-anchor="end">SCORE  024</text>
+    <g clip-path="url(#sceneClip)"><g class="float-a"><text class="code" x="705" y="130">const curiosity = true;</text><text class="code" x="815" y="155">git commit -m "learn"</text></g><g class="float-b"><text class="code" x="620" y="165">if (bug) debug();</text><text class="code" x="810" y="188">while (idea) build();</text></g></g>
+    <path class="platform" d="M445 297h102v13H445zM568 271h112v13H568zM706 306h105v13H706z"/><path class="platform2" d="M828 273h102v13H828z"/>
+    <text class="platform-text" x="496" y="306" text-anchor="middle">IDEA</text><text class="platform-text" x="624" y="280" text-anchor="middle">CODE</text><text class="platform-text" x="758" y="315" text-anchor="middle">TEST</text><text class="platform-text" x="879" y="282" text-anchor="middle">SHIP</text>
+    <g transform="translate(528 246)"><g class="coin1"><circle class="coin" r="12"/><text class="coin-text" y="3" text-anchor="middle">&lt;/&gt;</text></g></g>
+    <g transform="translate(673 221)"><g class="coin2"><circle class="coin" r="12"/><text class="coin-text" y="3" text-anchor="middle">{ }</text></g></g>
+    <g transform="translate(803 257)"><g class="coin3"><circle class="coin" r="12"/><text class="coin-text" y="3" text-anchor="middle">01</text></g></g>
+    <g transform="translate(820 289)"><g class="bug"><use href="#bugSprite"/></g></g>
+    <g class="portal-ring"><rect class="portal" x="889" y="205" width="41" height="65" rx="7"/></g><text class="portal-text" x="909.5" y="241" text-anchor="middle">LIVE</text>
+    <g class="motion" clip-path="url(#sceneClip)"><g class="runner"><use href="#playerSprite"/></g></g>
+    <g class="static-motion" transform="translate(624 238)"><use href="#playerSprite"/></g>
+    <path d="M443 346H929" stroke="#334155"/><rect x="444" y="355" width="484" height="10" rx="5" fill="#111A27"/><rect class="motion" x="444" y="355" width="330" height="10" rx="5" fill="#32F5C4" opacity=".7"/><text class="micro" x="444" y="380">XP  /  CURIOSITY + CONSISTENCY</text><text class="micro" x="929" y="380" text-anchor="end">BUILD → BREAK → LEARN → SHIP</text>
+  </g>
+  <g class="mono"><circle class="mint" cx="42" cy="416" r="3"/><text class="status" x="54" y="419">READY FOR THE NEXT QUEST</text><text class="status" x="958" y="419" text-anchor="end">AI  /  SOFTWARE  /  WEB  /  SIDE PROJECTS</text></g>
+</svg>
