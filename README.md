@@ -28,8 +28,6 @@
 
 <p align="center">Computer Engineering student. I own the whole loop: idea → design → build → ship.</p>
 
-<p align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=2600&pause=900&color=32F5C4&center=true&vCenter=true&width=420&height=40&lines=AI+%26+LLM+systems;RAG%2C+caching%2C+evaluation;Web+%26+product;Automation+that+sticks" alt="AI and LLM systems; RAG, caching, evaluation; web and product; automation that sticks"></p>
-
 </td>
 <td valign="middle" width="340">
 
