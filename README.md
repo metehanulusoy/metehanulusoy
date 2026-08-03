@@ -12,6 +12,11 @@
   a white panel. bar_color does not reach the embed's progress bar; that stays Spotify
   green.
 
+  The views counter is laobi rather than komarev: GitHub's camo proxy gets a hard 503
+  from komarev.com on every request, so that badge only ever rendered as a broken
+  image. laobi wants its colours URL-encoded with %23 — handed a bare hex it emits
+  fill="1a0b2e", which is not a valid colour, and the badge silently falls back to black.
+
   Every animation rests in a readable state under prefers-reduced-motion and
   none uses <script>, which never runs inside the <img> GitHub renders these in.
 -->
@@ -46,6 +51,6 @@
   <img width="46%" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=metehanulusoy&layout=compact&theme=synthwave&hide_border=true&bg_color=1a0b2e&title_color=FF6B9D&text_color=f7e8ff&langs_count=6" alt="Most used languages">
 </p>
 
-<p align="center"><img src="https://komarev.com/ghpvc/?username=metehanulusoy&style=plastic&color=1a0b2e&label=PROFILE+VIEWS" alt="Profile views"></p>
+<p align="center"><img src="https://visitor-badge.laobi.icu/badge?page_id=metehanulusoy.metehanulusoy&left_text=PROFILE%20VIEWS&left_color=%231a0b2e&right_color=%23FF6B9D" alt="Profile views"></p>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a0b2e,100:FF6B9D&height=120&section=footer&text=keep%20shipping&fontColor=ffffff&fontSize=24&animation=fadeIn" width="100%" alt="keep shipping">

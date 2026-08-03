@@ -1,6 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 30" role="img" aria-label="">
-  <defs><path id="s" d="M0 18 C 125 18 125 26 250 26 375 26 375 18 500 18 625 18 625 26 750 26 875 26 875 18 1000 18"/></defs>
-  <style>.s{fill:none;stroke:#FEC868;stroke-width:1.6;opacity:.7;animation:sl 9s linear infinite}
+  <defs>
+    <path id="s" d="M0 18 C 125 18 125 26 250 26 375 26 375 18 500 18 625 18 625 26 750 26 875 26 875 18 1000 18"/>
+    <!-- both ends are the same pink, so the seam between the two scrolling copies is invisible -->
+    <linearGradient id="g"><stop offset="0" stop-color="#FF6B9D"/><stop offset=".5" stop-color="#C56CF0"/><stop offset="1" stop-color="#FF6B9D"/></linearGradient>
+  </defs>
+  <style>.s{fill:none;stroke:url(#g);stroke-width:1.6;opacity:.75;animation:sl 9s linear infinite}
     @keyframes sl{to{transform:translateX(-1000px)}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}</style>
   <use class="s" href="#s"/><use class="s" href="#s" x="1000"/>
 </svg>
