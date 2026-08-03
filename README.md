@@ -155,31 +155,25 @@ A year of commits, played as a level.
 
 <img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/profile-night-rainbow.svg" width="100%" alt="Isometric 3D calendar of the last year of contributions, with commit, issue, pull request and review breakdown">
 
+<img src="assets/divider.svg" width="100%" alt="">
+
+## 06 / Now playing
+
 <!--
-  06 / NOW PLAYING — reserved.
-
-  Needs a one-time setup that only the account owner can do (Spotify OAuth):
-    1. Open https://spotify-github-profile.kittinanx.com and sign in with Spotify.
-    2. Pick a card style (default / compact / natemoo-re / novatorem / karaoke).
-    3. Copy the generated URL — it contains your uid.
-    4. Replace the src below with it and delete these comment markers.
-
-  <h2>06 / Now playing</h2>
-  <p align="center">
-    <a href="https://open.spotify.com/user/YOUR_SPOTIFY_ID">
-      <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=YOUR_UID&cover_image=true&theme=novatorem&bar_color=32F5C4&bar_color_cover=true" alt="What I'm listening to right now">
-    </a>
-  </p>
-
-  Note: unlike every other panel here, this one is served by a third-party host,
-  so it goes dark if that host does. A self-hosted alternative is the `music`
-  plugin of lowlighter/metrics, which also needs a Spotify token but writes the
-  SVG into this repository instead.
+  The only panel here served by a third-party host rather than generated into this
+  repository, so it goes dark if that host does. It reads "Offline" whenever nothing
+  is playing — there is no recently-played fallback in this service.
 -->
+
+<p align="center">
+  <a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9">
+    <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false&profanity=false&hide_remaster=false" alt="What I am listening to on Spotify right now" width="420">
+  </a>
+</p>
 
 <img src="assets/divider.svg" width="100%" alt="">
 
-## 06 / Co-op mode
+## 07 / Co-op mode
 
 Useful idea, weird prototype or hard problem? Send a signal.
 
@@ -193,4 +187,4 @@ Useful idea, weird prototype or hard problem? Send a signal.
 
 <img src="assets/footer.svg" width="100%" alt="End of signal — build, break, learn, ship">
 
-<p align="center"><sub>Hand-written SVG scenes · live panels generated in-repo and served from the <code>output</code> branch · no profile-view trackers · motion respects reduced-motion preferences</sub></p>
+<p align="center"><sub>Hand-written SVG scenes · live panels generated in-repo and served from the <code>output</code> branch · the Spotify card is the one third-party embed · no profile-view trackers · motion respects reduced-motion preferences</sub></p>
