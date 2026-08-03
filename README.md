@@ -16,26 +16,24 @@
       <img src="assets/arcade/nameplate-v1.svg" width="100%" alt="Metehan Ulusoy">
     </picture>
 
-  The Spotify chip must not be given a height: that SVG ships no viewBox, so forcing a
-  size stretches the canvas without scaling the content. 320px wide is its own size.
+  The intro sits next to the chip as two images in one centred paragraph rather than a
+  table: GitHub draws visible borders around table cells, which framed the whole row.
+
+  The Spotify chip must never be given a height, and never a width above its own 320px:
+  that SVG ships no viewBox, so enlarging it stretches the canvas without scaling the
+  content and the text collides. Scaling down is fine.
+  Theme is `compact` on purpose — natemoo-re and novatorem put their light text colours
+  behind @media (prefers-color-scheme: dark), so they turn near-black for a visitor
+  whose OS is in light mode. compact and default carry no media query.
 -->
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=200&section=header&text=Metehan%20Ulusoy&fontColor=ffffff&fontSize=52&fontAlignY=38&desc=building%20%C2%B7%20breaking%20%C2%B7%20learning%20in%20public&descSize=18&descAlignY=56&animation=fadeIn" width="100%" alt="Metehan Ulusoy — building, breaking, learning in public">
 
-<table>
-<tr>
-<td valign="middle">
-
-<p align="center">Computer Engineering student. I own the whole loop: idea → design → build → ship.</p>
-
-</td>
-<td valign="middle" width="340">
-
-<a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img width="320" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=false&theme=default&show_offline=false&background_color=0d1117&interchange=false" alt="What I am listening to on Spotify right now"></a>
-
-</td>
-</tr>
-</table>
+<p align="center">
+  <a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img width="260" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=false&theme=compact&show_offline=false&background_color=0d1117&interchange=false" alt="What I am listening to on Spotify right now"></a>
+  &nbsp;&nbsp;&nbsp;
+  <img width="560" src="assets/arcade/intro-v1.svg" alt="I’m a Computer Engineering student who likes owning the whole build loop — from shaping an idea to writing the software, connecting AI where it fits, and automating the repetitive parts">
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-0D1117?style=for-the-badge&logo=python&logoColor=3776AB" alt="Python">
