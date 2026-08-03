@@ -1,30 +1,25 @@
 <!--
   PROFILE / SOURCE
-  The terminal and the contribution game are built by GitHub Actions in
-  .github/workflows and published to this repository's `output` branch. The header
-  banner, the repo cards, the typed line, the badges, the wave footer and the Spotify
-  chip come from third-party hosts.
+
+  What this file deliberately does NOT carry: repository cards and a contribution
+  calendar. GitHub already renders both directly beneath this README — pinned repos
+  and the real calendar — so duplicating them just made the page twice as long.
+  This file is for what GitHub does not show.
+
+  The nameplate and the intro line are hand-written SVGs in assets/, rendered straight
+  from this repo; the nameplate honours prefers-reduced-motion. The terminal card and
+  the contribution game are built by GitHub Actions in .github/workflows and published
+  to this repository's `output` branch. The badges, the wave footer and the Spotify bar
+  come from third-party hosts.
 
   No section headings and no dividers on purpose — the panels carry the structure.
 
-  The header banner is served by capsule-render, so the name itself depends on that
-  host. assets/arcade/nameplate-v1.svg is the hand-written fallback kept for exactly
-  that case — swap the <img> above for the <picture> block and it reads again:
-
-    <picture>
-      <source media="(max-width: 600px)" srcset="assets/arcade/nameplate-mobile-v1.svg">
-      <img src="assets/arcade/nameplate-v1.svg" width="100%" alt="Metehan Ulusoy">
-    </picture>
-
-  The intro sits next to the chip as two images in one centred paragraph rather than a
-  table: GitHub draws visible borders around table cells, which framed the whole row.
-
-  The Spotify chip must never be given a height, and never a width above its own 320px:
-  that SVG ships no viewBox, so enlarging it stretches the canvas without scaling the
-  content and the text collides. Scaling down is fine.
-  Theme is `compact` on purpose — natemoo-re and novatorem put their light text colours
-  behind @media (prefers-color-scheme: dark), so they turn near-black for a visitor
-  whose OS is in light mode. compact and default carry no media query.
+  The Spotify bar uses the spotify-embed theme: it is the only one that shows cover,
+  track, artist, a now-playing badge and progress, and the only horizontal one with no
+  prefers-color-scheme rules. natemoo-re and novatorem hide their light text behind a
+  dark-mode media query, so they wash out for a visitor whose OS is in light mode.
+  Never give that image a height — the SVG ships no viewBox, so forcing a size
+  stretches the canvas without scaling the content and the text collides.
 -->
 
 <picture>
@@ -51,19 +46,6 @@
   <img src="https://img.shields.io/badge/PostgreSQL-0D1117?style=for-the-badge&logo=postgresql&logoColor=4169E1" alt="PostgreSQL">
   <img src="https://img.shields.io/badge/Redis-0D1117?style=for-the-badge&logo=redis&logoColor=DC382D" alt="Redis">
   <img src="https://img.shields.io/badge/Docker-0D1117?style=for-the-badge&logo=docker&logoColor=2496ED" alt="Docker">
-</p>
-
-<p align="center">
-  <a href="https://github.com/metehanulusoy/semantic-caching"><img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=semantic-caching&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=32F5C4&text_color=c9d1d9&icon_color=FF4ECD" alt="semantic-caching — OpenAI-compatible semantic caching proxy" width="49%"></a>
-  <a href="https://github.com/metehanulusoy/rag-hybrid-search"><img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=rag-hybrid-search&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=32F5C4&text_color=c9d1d9&icon_color=FF4ECD" alt="rag-hybrid-search — dense and BM25 retrieval with reranking" width="49%"></a>
-</p>
-<p align="center">
-  <a href="https://github.com/metehanulusoy/llm-cost-autopilot"><img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=llm-cost-autopilot&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=32F5C4&text_color=c9d1d9&icon_color=FF4ECD" alt="llm-cost-autopilot — quality-aware multi-provider model routing" width="49%"></a>
-  <a href="https://github.com/metehanulusoy/failure-forensics"><img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=failure-forensics&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=32F5C4&text_color=c9d1d9&icon_color=FF4ECD" alt="failure-forensics — root-cause analysis for AI pipelines" width="49%"></a>
-</p>
-<p align="center">
-  <a href="https://github.com/metehanulusoy/myanimelist"><img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=myanimelist&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=32F5C4&text_color=c9d1d9&icon_color=FF4ECD" alt="myanimelist — social anime platform built with Next.js and Supabase" width="49%"></a>
-  <a href="https://github.com/metehanulusoy/metehanulusoy.github.io"><img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=metehanulusoy.github.io&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=32F5C4&text_color=c9d1d9&icon_color=FF4ECD" alt="metehanulusoy.github.io — motion portfolio with WebGL, GSAP and Lenis" width="49%"></a>
 </p>
 
 <p align="center"><a href="https://github.com/metehanulusoy?tab=repositories"><strong>All repositories →</strong></a></p>
