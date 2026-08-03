@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 242" role="img" aria-label="Metehan Ulusoy — building things, breaking things, learning in public">
+  <defs>
+    <linearGradient id="npm-sweep" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="420" y2="0" spreadMethod="repeat">
+      <stop offset="0" stop-color="#32F5C4"/><stop offset=".34" stop-color="#4DA3FF"/><stop offset=".67" stop-color="#FF4ECD"/><stop offset="1" stop-color="#32F5C4"/>
+    </linearGradient>
+    <linearGradient id="npm-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#32F5C4" stop-opacity="0"/><stop offset=".5" stop-color="#32F5C4" stop-opacity=".55"/><stop offset="1" stop-color="#FF4ECD" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="npm-mask">
+      <text class="name sans" x="360" y="92" text-anchor="middle" fill="#ffffff">METEHAN</text>
+      <text class="name sans" x="360" y="150" text-anchor="middle" fill="#ffffff">ULUSOY</text>
+    </mask>
+    <!-- clip widths match the rendered text (33 and 19 monospace chars at 15px ≈ 9px each)
+         so the caret lands exactly at the end of the line instead of past it -->
+    <clipPath id="npm-l1"><rect class="t1" x="208" y="180" width="305" height="22"/></clipPath>
+    <clipPath id="npm-l2"><rect class="t2" x="208" y="204" width="180" height="22"/></clipPath>
+  </defs>
+  <style>
+    .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Ubuntu,Roboto,sans-serif}
+    .mono{font-family:"SFMono-Regular","Cascadia Code",Consolas,"Liberation Mono",Menlo,monospace}
+    .name{font-size:52px;font-weight:850;letter-spacing:2px}
+    .ghost{font-size:52px;font-weight:850;letter-spacing:2px;fill:#FF4ECD;opacity:.16}
+    .micro{font-size:10px;font-weight:700;letter-spacing:2.4px;fill:#718092}
+    .tag{font-size:15px;font-weight:650;fill:#A8B4C0}
+    .caret{fill:#32F5C4}
+    /* Both lines rest at full width; the second one simply holds at zero for the first
+       half of the timeline instead of using a delay, so no frame ever shows a half state. */
+    .sweep{animation:npm-slide 7s linear infinite}
+    .t1{animation:npm-t1 3.4s steps(33) 1}
+    .t2{animation:npm-t2 3.4s steps(19) 1}
+    .cursor{animation:npm-walk 3.4s steps(19) 1,npm-blink 1.05s step-end infinite}
+    @keyframes npm-slide{from{transform:translateX(0)}to{transform:translateX(420px)}}
+    @keyframes npm-t1{0%{width:0}56%,100%{width:305px}}
+    @keyframes npm-t2{0%,56%{width:0}100%{width:180px}}
+    @keyframes npm-walk{0%,56%{transform:translateX(-180px)}100%{transform:translateX(0)}}
+    @keyframes npm-blink{50%{opacity:0}}
+    @media(prefers-color-scheme:light){.micro{fill:#57606A}.tag{fill:#4A5560}.ghost{opacity:.1}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important}.motion{display:none}}
+  </style>
+  <text class="micro mono" x="360" y="36" text-anchor="middle">PLAYER 01 / READY</text>
+  <text class="ghost sans" x="363" y="95" text-anchor="middle">METEHAN</text>
+  <text class="ghost sans" x="363" y="153" text-anchor="middle">ULUSOY</text>
+  <g mask="url(#npm-mask)"><rect class="sweep" x="-520" y="46" width="1880" height="120" fill="url(#npm-sweep)"/></g>
+  <path d="M150 170H570" stroke="url(#npm-rule)" stroke-width="1"/>
+  <g clip-path="url(#npm-l1)"><text class="tag mono" x="212" y="196">Building things, breaking things,</text></g>
+  <g clip-path="url(#npm-l2)"><text class="tag mono" x="212" y="220">learning in public.</text></g>
+  <g class="motion"><rect class="caret cursor" x="386" y="207" width="9" height="15"/></g>
+</svg>
