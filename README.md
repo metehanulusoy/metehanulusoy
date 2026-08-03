@@ -5,6 +5,13 @@
 
   No repository cards, contribution calendar, activity feed or contact row:
   GitHub renders every one of those outside this README already.
+  The now-playing card uses theme=spotify-embed with mode=dark. `mode` is not in the
+  service's documented parameter list but view.py reads it, and the embed template is
+  the only one that branches on it — every other theme takes background_color instead,
+  which this template hardcodes to white. It is the one way to get this shape without
+  a white panel. bar_color does not reach the embed's progress bar; that stays Spotify
+  green.
+
   Every animation rests in a readable state under prefers-reduced-motion and
   none uses <script>, which never runs inside the <img> GitHub renders these in.
 -->
@@ -17,7 +24,7 @@
 
 <img src="assets/sep1.svg" width="100%" alt="">
 
-<p align="center"><a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img width="320" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=true&show_offline=false&interchange=false&theme=default&background_color=1a0b2e&bar_color=FF6B9D" alt="What I am listening to on Spotify right now"></a></p>
+<p align="center"><a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img width="460" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=true&show_offline=false&interchange=false&theme=spotify-embed&mode=dark" alt="What I am listening to on Spotify right now"></a></p>
 
 <img src="assets/sep1.svg" width="100%" alt="">
 
