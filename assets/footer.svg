@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120" role="img" aria-label="End of signal — build, break, learn, ship">
-  <defs><linearGradient id="h" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#36F1CD" stop-opacity="0"/><stop offset=".5" stop-color="#36F1CD" stop-opacity=".28"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/></linearGradient></defs>
-  <style>.mono{font-family:"SFMono-Regular","Cascadia Code",Consolas,"Liberation Mono",Menlo,monospace}.msg{font-size:11px;font-weight:600;letter-spacing:1.6px;fill:#82909C}.line{stroke:url(#h)}.dot{fill:#64E8C1;animation:p 3s ease-in-out infinite}@keyframes p{0%,100%{opacity:.3}50%{opacity:1}}@media(prefers-color-scheme:light){.msg{fill:#57606A}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}</style>
-  <path class="line" d="M120 36H880"/>
-  <circle class="dot" cx="500" cy="36" r="3"/>
-  <text class="msg mono" x="500" y="75" text-anchor="middle">END OF SIGNAL / BUILD · BREAK · LEARN · SHIP</text>
-</svg>
