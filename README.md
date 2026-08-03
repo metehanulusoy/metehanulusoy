@@ -12,7 +12,8 @@
   is for what GitHub does not show.
 
   Everything is centred, including captions. Panels that span the column use
-  width="100%"; the language card is pinned to 420px so it does not stretch.
+  width="100%"; the two stat cards sit two-up at 49% and 46% so their optical widths
+  match. The now-playing chip is the one floated element, pinned to the top corner.
 
   A streak card sat here and was removed: streak-stats answers with an HTML
   "Application Error" page under a 200 status roughly one request in four, which
@@ -27,12 +28,16 @@
 
   github-readme-stats' own instance is 503, so the language card points at a mirror.
 
-  The Spotify bar uses the spotify-embed theme: it is the only one that shows cover,
-  track, artist, a now-playing badge and progress, and the only horizontal one with no
-  prefers-color-scheme rules. natemoo-re and novatorem hide their light text behind a
-  dark-mode media query, so they wash out for a visitor whose OS is in light mode.
-  Never give that image a height — the SVG ships no viewBox, so forcing a size
-  stretches the canvas without scaling the content and the text collides.
+  The now-playing chip uses the compact theme without a cover: it is small enough for
+  the corner and carries no prefers-color-scheme rules. natemoo-re and novatorem look
+  better but hide their light text behind a dark-mode media query, so they wash out for
+  a visitor whose OS is in light mode. Never give that image a height or a width above
+  its own 320px — the SVG ships no viewBox, so enlarging it stretches the canvas
+  without scaling the content and the text collides.
+
+  Everything third-party here was sampled before it went in: the stat cards 5/5, the
+  view counter 3/3, shields, capsule-render and the chip clean. A streak card was tried
+  and dropped at 2 failures in 8.
 -->
 
 <picture>
@@ -40,11 +45,15 @@
   <img src="assets/nameplate.svg" width="100%" alt="Metehan Ulusoy — building things, breaking things, learning in public">
 </picture>
 
-<p align="center"><sub>PRESS START&nbsp; ·&nbsp; PICK A PROBLEM&nbsp; ·&nbsp; BUILD THE NEXT VERSION</sub></p>
+<img src="assets/marquee.svg" width="100%" alt="Build, break, learn, ship — AI and LLM systems, RAG, caching, evaluation, web and product, automation that sticks">
+
+<a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img align="right" width="320" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=false&theme=compact&show_offline=false&background_color=0d1117&interchange=false" alt="What I am listening to on Spotify right now"></a>
 
 <p align="center">
-  <img width="700" src="assets/intro.svg" alt="Computer Engineering student. I own the whole loop: idea, design, build, ship">
+  <img width="620" src="assets/intro.svg" alt="Computer Engineering student. I own the whole loop: idea, design, build, ship">
 </p>
+
+<br clear="right">
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-0D1117?style=for-the-badge&logo=python&logoColor=3776AB" alt="Python">
@@ -60,7 +69,8 @@
 <p align="center">&nbsp;</p>
 
 <p align="center">
-  <img width="420" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=metehanulusoy&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=32F5C4&text_color=c9d1d9&langs_count=6" alt="Most used languages across my repositories">
+  <img width="49%" src="https://github-readme-stats-eight-theta.vercel.app/api?username=metehanulusoy&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=32F5C4&text_color=c9d1d9&icon_color=FF4ECD&rank_icon=github" alt="Stars, commits, pull requests and issues">
+  <img width="46%" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=metehanulusoy&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=32F5C4&text_color=c9d1d9&langs_count=6" alt="Most used languages across my repositories">
 </p>
 
 <img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/terminal-hacker.svg" width="100%" alt="Terminal session typing whoami and neofetch, printing live GitHub stats">
@@ -75,11 +85,7 @@
 
 <p align="center"><sub>A year of commits, played as a level.</sub></p>
 
-<p align="center">&nbsp;</p>
-
-<p align="center">
-  <a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img width="460" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=true&theme=spotify-embed&show_offline=false&interchange=false" alt="What I am listening to on Spotify right now"></a>
-</p>
+<img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/profile-night-rainbow.svg" width="100%" alt="Isometric 3D calendar of the last year of contributions">
 
 <p align="center">&nbsp;</p>
 
@@ -89,6 +95,10 @@
   <a href="https://www.linkedin.com/in/metehan-ulusoy-1806b6223"><strong>LINKEDIN ↗</strong></a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="mailto:ulusoy.metehan03@gmail.com"><strong>EMAIL ↗</strong></a>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=metehanulusoy&style=for-the-badge&color=0D1117&label=PROFILE+VIEWS" alt="Profile views">
 </p>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=140&section=footer&text=let%27s%20build%20something&fontColor=ffffff&fontSize=28&animation=fadeIn" width="100%" alt="Animated wave footer reading: let's build something">
