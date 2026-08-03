@@ -1,4 +1,4 @@
-name: Refresh DEV ARCADE HUD
+name: Refresh live panels
 
 on:
   schedule:
@@ -17,13 +17,13 @@ permissions:
   contents: write
 
 concurrency:
-  group: dev-arcade-hud-${{ github.ref }}
+  group: live-panels-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
 
     steps:
       - name: Check out profile source
@@ -37,24 +37,44 @@ jobs:
       - name: Verify source and arcade quest cards
         run: |
           python -m compileall -q scripts
-          python scripts/build_project_cards.py --check
           python scripts/build_arcade_project_cards.py --check
           python scripts/validate_assets.py
 
-      - name: Build live player HUD
+      # --- live panels -------------------------------------------------------
+      # Each generator writes its SVG into the workspace; everything is gathered
+      # into a single publish/ directory below. There is exactly ONE publish step
+      # on purpose: the deploy runs with keep_history:false, so a second deploy
+      # would wipe the first one's files off the output branch.
+
+      - name: Build terminal stats card
+        uses: yogeshwaran01/github-stats-terminal-style@f07802ed1eb12acb90d4acac60fd7f313c543862 # v1.0.0
+        with:
+          username: metehanulusoy
+          theme: hacker
+          headerStyle: mac
+          commands: whoami,neofetch,languages,top-repos,uptime,exit
+          outputPath: terminal-hacker.svg
+
+      - name: Build 3D contribution calendar
+        uses: yoshi389111/github-profile-3d-contrib@7d95e7d4cdc028dd1e1cbd957d65f35efb12ae39 # v0.9.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USER_NAME: metehanulusoy
-        run: python scripts/build_terminal_card.py --require-live
+          USERNAME: metehanulusoy
 
-      - name: Validate generated assets
-        run: python scripts/validate_assets.py
+      - name: Build contribution-grid game
+        uses: abozanona/pacman-contribution-graph@7332e1de7903ab780c3692a4127a59cc13872daa # v5.3.2
+        with:
+          github_user_name: metehanulusoy
+          games: bomberman
 
       - name: Collect publishable assets
         run: |
           mkdir -p publish
-          cp assets/generated/player-hud-v1.svg publish/
-          cp assets/generated/player-hud-mobile-v1.svg publish/
+          cp terminal-hacker.svg publish/
+          cp profile-3d-contrib/profile-night-rainbow.svg publish/
+          cp dist/bomberman-contribution-graph.svg publish/
+          cp dist/bomberman-contribution-graph-dark.svg publish/
+          ls -la publish/
 
       - name: Publish to the output branch
         uses: crazy-max/ghaction-github-pages@1d6ee9b181a81033a16bd707a1401afa978daab4 # v5.0.0
