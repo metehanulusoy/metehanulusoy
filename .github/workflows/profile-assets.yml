@@ -58,7 +58,7 @@ jobs:
           INPUT_USERNAME: metehanulusoy
           INPUT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           INPUT_THEME: hacker
-          INPUT_HEADERSTYLE: mac
+          INPUT_HEADERSTYLE: retro
           INPUT_TYPINGSPEED: "60"
           INPUT_COMMANDS: whoami,neofetch,exit
           INPUT_OUTPUTPATH: ${{ github.workspace }}/terminal-hacker.svg

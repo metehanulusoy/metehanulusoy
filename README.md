@@ -22,13 +22,22 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=200&section=header&text=Metehan%20Ulusoy&fontColor=ffffff&fontSize=52&fontAlignY=38&desc=building%20%C2%B7%20breaking%20%C2%B7%20learning%20in%20public&descSize=18&descAlignY=56&animation=fadeIn" width="100%" alt="Metehan Ulusoy — building, breaking, learning in public">
 
-<a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img align="right" width="320" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=true&theme=natemoo-re&show_offline=false&background_color=0d1117&interchange=false" alt="What I am listening to on Spotify right now"></a>
+<table>
+<tr>
+<td valign="middle">
 
-Computer Engineering student. I own the whole loop: idea → design → build → ship.
+<p align="center">Computer Engineering student. I own the whole loop: idea → design → build → ship.</p>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=2600&pause=900&color=32F5C4&width=420&height=40&lines=AI+%26+LLM+systems;RAG%2C+caching%2C+evaluation;Web+%26+product;Automation+that+sticks" alt="AI and LLM systems; RAG, caching, evaluation; web and product; automation that sticks">
+<p align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=2600&pause=900&color=32F5C4&center=true&vCenter=true&width=420&height=40&lines=AI+%26+LLM+systems;RAG%2C+caching%2C+evaluation;Web+%26+product;Automation+that+sticks" alt="AI and LLM systems; RAG, caching, evaluation; web and product; automation that sticks"></p>
 
-<br clear="right">
+</td>
+<td valign="middle" width="340">
+
+<a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img width="320" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=false&theme=default&show_offline=false&background_color=0d1117&interchange=false" alt="What I am listening to on Spotify right now"></a>
+
+</td>
+</tr>
+</table>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-0D1117?style=for-the-badge&logo=python&logoColor=3776AB" alt="Python">
@@ -65,6 +74,11 @@ Computer Engineering student. I own the whole loop: idea → design → build �
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/bomberman-contribution-graph.svg">
   <img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/bomberman-contribution-graph-dark.svg" width="100%" alt="Bomberman clearing a year of GitHub contributions square by square">
 </picture>
+
+<!-- spacer: a bare <br> between blocks collapses to ~2px here; an empty centred
+     paragraph reliably adds ~40px, which balances this row between the grid above
+     and the wave below -->
+<p align="center">&nbsp;</p>
 
 <p align="center">
   <a href="https://metehanulusoy.github.io"><strong>PORTFOLIO ↗</strong></a>
