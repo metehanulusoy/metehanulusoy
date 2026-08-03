@@ -1,30 +1,45 @@
 <!--
   PROFILE / SOURCE
-  The nameplate is a hand-written SVG in assets/, rendered straight from this repo and
-  honouring prefers-reduced-motion. The terminal, the contribution game and the 3D
-  calendar are built by GitHub Actions in .github/workflows and published to this
-  repository's `output` branch. The repo cards, the typed line, the badges, the wave
-  footer and the Spotify card come from third-party hosts.
+  The terminal and the contribution game are built by GitHub Actions in
+  .github/workflows and published to this repository's `output` branch. The header
+  banner, the repo cards, the typed line, the badges, the wave footer and the Spotify
+  chip come from third-party hosts.
 
   No section headings and no dividers on purpose — the panels carry the structure.
+
+  The header banner is served by capsule-render, so the name itself depends on that
+  host. assets/arcade/nameplate-v1.svg is the hand-written fallback kept for exactly
+  that case — swap the <img> above for the <picture> block and it reads again:
+
+    <picture>
+      <source media="(max-width: 600px)" srcset="assets/arcade/nameplate-mobile-v1.svg">
+      <img src="assets/arcade/nameplate-v1.svg" width="100%" alt="Metehan Ulusoy">
+    </picture>
+
+  The Spotify chip must not be given a height: that SVG ships no viewBox, so forcing a
+  size stretches the canvas without scaling the content. 320px wide is its own size.
 -->
 
-<picture>
-  <source media="(max-width: 600px)" srcset="assets/arcade/nameplate-mobile-v1.svg">
-  <img src="assets/arcade/nameplate-v1.svg" width="100%" alt="Metehan Ulusoy — building things, breaking things, learning in public">
-</picture>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=200&section=header&text=Metehan%20Ulusoy&fontColor=ffffff&fontSize=52&fontAlignY=38&desc=building%20%C2%B7%20breaking%20%C2%B7%20learning%20in%20public&descSize=18&descAlignY=56&animation=fadeIn" width="100%" alt="Metehan Ulusoy — building, breaking, learning in public">
 
-<p align="center"><code>PRESS START&nbsp; / &nbsp;PICK A PROBLEM&nbsp; / &nbsp;BUILD THE NEXT VERSION</code></p>
+<a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img align="right" width="320" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=true&theme=natemoo-re&show_offline=false&background_color=0d1117&interchange=false" alt="What I am listening to on Spotify right now"></a>
 
-I’m a Computer Engineering student who likes owning the whole build loop—from shaping an idea and designing the interaction to writing the software, connecting AI when it fits, and automating the repetitive parts. I follow the problem, choose the tools, and learn by shipping.
+Computer Engineering student. I own the whole loop: idea → design → build → ship.
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=2600&pause=900&color=32F5C4&width=420&height=40&lines=AI+%26+LLM+systems;RAG%2C+caching%2C+evaluation;Web+%26+product;Automation+that+sticks" alt="AI and LLM systems; RAG, caching, evaluation; web and product; automation that sticks">
+
+<br clear="right">
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=2600&pause=900&color=32F5C4&center=true&vCenter=true&width=560&height=48&lines=AI+%26+LLM+systems;RAG%2C+caching%2C+evaluation;Web+%26+product;Automation+that+sticks" alt="AI and LLM systems; RAG, caching, evaluation; web and product; automation that sticks" width="560">
+  <img src="https://img.shields.io/badge/Python-0D1117?style=for-the-badge&logo=python&logoColor=3776AB" alt="Python">
+  <img src="https://img.shields.io/badge/TypeScript-0D1117?style=for-the-badge&logo=typescript&logoColor=3178C6" alt="TypeScript">
+  <img src="https://img.shields.io/badge/React-0D1117?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/Next.js-0D1117?style=for-the-badge&logo=nextdotjs&logoColor=FFFFFF" alt="Next.js">
+  <img src="https://img.shields.io/badge/FastAPI-0D1117?style=for-the-badge&logo=fastapi&logoColor=009688" alt="FastAPI">
+  <img src="https://img.shields.io/badge/PostgreSQL-0D1117?style=for-the-badge&logo=postgresql&logoColor=4169E1" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/Redis-0D1117?style=for-the-badge&logo=redis&logoColor=DC382D" alt="Redis">
+  <img src="https://img.shields.io/badge/Docker-0D1117?style=for-the-badge&logo=docker&logoColor=2496ED" alt="Docker">
 </p>
-
-<img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/terminal-hacker.svg" width="100%" alt="Terminal session typing whoami and neofetch, printing live GitHub stats">
-
-<sub>Rebuilt daily from GitHub’s API by a workflow in this repository and published to the <code>output</code> branch.</sub>
 
 <p align="center">
   <a href="https://github.com/metehanulusoy/semantic-caching"><img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=semantic-caching&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=32F5C4&text_color=c9d1d9&icon_color=FF4ECD" alt="semantic-caching — OpenAI-compatible semantic caching proxy" width="49%"></a>
@@ -39,50 +54,17 @@ I’m a Computer Engineering student who likes owning the whole build loop—fro
   <a href="https://github.com/metehanulusoy/metehanulusoy.github.io"><img src="https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=metehanulusoy&repo=metehanulusoy.github.io&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=32F5C4&text_color=c9d1d9&icon_color=FF4ECD" alt="metehanulusoy.github.io — motion portfolio with WebGL, GSAP and Lenis" width="49%"></a>
 </p>
 
-<p align="center"><a href="https://github.com/metehanulusoy?tab=repositories"><strong>🗺️ EXPLORE THE FULL QUEST MAP →</strong></a></p>
+<p align="center"><a href="https://github.com/metehanulusoy?tab=repositories"><strong>All repositories →</strong></a></p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-0D1117?style=for-the-badge&logo=python&logoColor=3776AB" alt="Python">
-  <img src="https://img.shields.io/badge/TypeScript-0D1117?style=for-the-badge&logo=typescript&logoColor=3178C6" alt="TypeScript">
-  <img src="https://img.shields.io/badge/React-0D1117?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
-  <img src="https://img.shields.io/badge/Next.js-0D1117?style=for-the-badge&logo=nextdotjs&logoColor=FFFFFF" alt="Next.js">
-</p>
-<p align="center">
-  <img src="https://img.shields.io/badge/FastAPI-0D1117?style=for-the-badge&logo=fastapi&logoColor=009688" alt="FastAPI">
-  <img src="https://img.shields.io/badge/PostgreSQL-0D1117?style=for-the-badge&logo=postgresql&logoColor=4169E1" alt="PostgreSQL">
-  <img src="https://img.shields.io/badge/Redis-0D1117?style=for-the-badge&logo=redis&logoColor=DC382D" alt="Redis">
-  <img src="https://img.shields.io/badge/Docker-0D1117?style=for-the-badge&logo=docker&logoColor=2496ED" alt="Docker">
-</p>
+<img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/terminal-hacker.svg" width="100%" alt="Terminal session typing whoami and neofetch, printing live GitHub stats">
 
-**Tools are loadouts, not labels.** I pick what fits the problem.
-
-A year of commits, played as a level.
+<sub>Rebuilt daily from GitHub’s API by a workflow in this repository and published to the <code>output</code> branch.</sub>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/bomberman-contribution-graph-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/bomberman-contribution-graph.svg">
   <img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/bomberman-contribution-graph-dark.svg" width="100%" alt="Bomberman clearing a year of GitHub contributions square by square">
 </picture>
-
-...and the same year, stacked.
-
-<img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/profile-night-rainbow.svg" width="100%" alt="Isometric 3D calendar of the last year of contributions, with commit, issue, pull request and review breakdown">
-
-<!--
-  Served by a third-party host rather than generated into this repository, so it goes
-  dark if that host does. It reads "Offline" whenever nothing is playing — there is no
-  recently-played fallback in this service.
-
-  Do not set width/height on this image: the SVG ships no viewBox, so forcing a size
-  stretches the canvas without scaling the content and the equaliser lands on top of
-  the track title. It is 320px wide by design.
--->
-
-<p align="center">
-  <a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9">
-    <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false&profanity=false&hide_remaster=false" alt="What I am listening to on Spotify right now">
-  </a>
-</p>
 
 <p align="center">
   <a href="https://metehanulusoy.github.io"><strong>PORTFOLIO ↗</strong></a>
