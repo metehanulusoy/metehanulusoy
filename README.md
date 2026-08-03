@@ -17,7 +17,7 @@
 
 <img src="assets/sep1.svg" width="100%" alt="">
 
-<p align="center"><a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img width="460" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=true&show_offline=false&interchange=false&theme=spotify-embed" alt="What I am listening to on Spotify right now"></a></p>
+<p align="center"><a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img width="320" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=true&show_offline=false&interchange=false&theme=default&background_color=1a0b2e&bar_color=FF6B9D" alt="What I am listening to on Spotify right now"></a></p>
 
 <img src="assets/sep1.svg" width="100%" alt="">
 
