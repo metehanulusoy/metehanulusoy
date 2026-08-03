@@ -17,14 +17,22 @@
   image. laobi wants its colours URL-encoded with %23 — handed a bare hex it emits
   fill="1a0b2e", which is not a valid colour, and the badge silently falls back to black.
 
+  The city GIF gets its own row: paired beside the AniList card it read as one
+  more panel rather than the closing image. The AniList card sits with the stats
+  above it, where the other data panels are.
+
   assets/citypop.gif is served from this repository on purpose. Of the two anime
   GIFs in the profile-README corpus, the one hosted on a third-party service is
   already dead and only the self-hosted one still answers — so anything raster
-  lives here. ffmpeg took it from 3.9 MB to 515 KB (12fps, 460px, 64 colours)
-  with no visible loss. Art picked up from HyunCafe/HyunCafe by way of guilyx.
+  lives here. ffmpeg took it from 3.9 MB to 637 KB (620px, 48 colours, 8fps).
+  Full width would have been sharper but every encode at 800px cost 1.2-1.7 MB,
+  so the width is set to what fits the budget rather than the other way round.
+  Art picked up from HyunCafe/HyunCafe by way of guilyx.
 
-  The AniList card is user 8189019 (metmete). It renders name-and-avatar only
-  until the list has entries, then fills in with counts on its own.
+  The AniList card is user 8189019 (metmete). It shows a stats strip only once
+  the list has entries with progress on them: AniList counts what you have
+  watched, not what you have added — a list of 22 titles all sitting at episode
+  0 reports a count of 0.
 
   Every animation rests in a readable state under prefers-reduced-motion and
   none uses <script>, which never runs inside the <img> GitHub renders these in.
@@ -60,11 +68,14 @@
   <img width="46%" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=metehanulusoy&layout=compact&theme=synthwave&hide_border=true&bg_color=1a0b2e&title_color=FF6B9D&text_color=f7e8ff&langs_count=6" alt="Most used languages">
 </p>
 
+<p align="center">
+  <a href="https://anilist.co/user/8189019"><img width="50%" src="https://img.anili.st/user/8189019" alt="What I am watching on AniList"></a>
+</p>
+
 <img src="assets/sep1.svg" width="100%" alt="">
 
 <p align="center">
-  <img width="49%" src="assets/citypop.gif" alt="A neon city at night">
-  <a href="https://anilist.co/user/8189019"><img width="49%" src="https://img.anili.st/user/8189019" alt="What I am watching on AniList"></a>
+  <img width="66%" src="assets/citypop.gif" alt="A neon city at night">
 </p>
 
 <p align="center"><img src="https://visitor-badge.laobi.icu/badge?page_id=metehanulusoy.metehanulusoy&left_text=PROFILE%20VIEWS&left_color=%231a0b2e&right_color=%23FF6B9D" alt="Profile views"></p>
