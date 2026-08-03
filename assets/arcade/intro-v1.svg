@@ -1,16 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 152" role="img" aria-label="I'm a Computer Engineering student who likes owning the whole build loop — from shaping an idea to writing the software, connecting AI where it fits and automating the rest">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 34" role="img" aria-label="Computer Engineering student. I own the whole loop: idea, design, build, ship">
   <style>
-    .s{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Ubuntu,Roboto,sans-serif;font-size:17px}
+    .s{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Ubuntu,Roboto,sans-serif;font-size:18px}
     .base{fill:#c9d1d9}
     .k1{fill:#32F5C4;font-weight:700}
-    .k2{fill:#4DA3FF;font-weight:700}
-    .k3{fill:#FF4ECD;font-weight:700}
-    .k4{fill:#FFD166;font-weight:700}
-    @media(prefers-color-scheme:light){.base{fill:#3d4652}}
+    .a{fill:#4DA3FF;font-weight:700}
+    .b{fill:#8B5CF6;font-weight:700}
+    .c{fill:#FF4ECD;font-weight:700}
+    .d{fill:#FFD166;font-weight:700}
+    .arrow{fill:#5c6b7a}
+    @media(prefers-color-scheme:light){.base{fill:#3d4652}.arrow{fill:#8b949e}}
   </style>
-  <text class="s base" x="0" y="24">I’m a <tspan class="k1">Computer Engineering</tspan> student who likes owning</text>
-  <text class="s base" x="0" y="52">the whole <tspan class="k2">build loop</tspan> — from shaping an idea to</text>
-  <text class="s base" x="0" y="80">writing the software, connecting <tspan class="k3">AI</tspan> where it fits,</text>
-  <text class="s base" x="0" y="108">and <tspan class="k4">automating</tspan> the repetitive parts.</text>
-  <text class="s base" x="0" y="140" font-size="14" opacity=".72">I follow the problem, choose the tools, and learn by shipping.</text>
+  <text class="s base" x="350" y="24" text-anchor="middle"><tspan class="k1">Computer Engineering</tspan> student. I own the whole loop: <tspan class="a">idea</tspan> <tspan class="arrow">→</tspan> <tspan class="b">design</tspan> <tspan class="arrow">→</tspan> <tspan class="c">build</tspan> <tspan class="arrow">→</tspan> <tspan class="d">ship</tspan>.</text>
 </svg>

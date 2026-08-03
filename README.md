@@ -27,12 +27,19 @@
   whose OS is in light mode. compact and default carry no media query.
 -->
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=200&section=header&text=Metehan%20Ulusoy&fontColor=ffffff&fontSize=52&fontAlignY=38&desc=building%20%C2%B7%20breaking%20%C2%B7%20learning%20in%20public&descSize=18&descAlignY=56&animation=fadeIn" width="100%" alt="Metehan Ulusoy — building, breaking, learning in public">
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/arcade/nameplate-mobile-v1.svg">
+  <img src="assets/arcade/nameplate-v1.svg" width="100%" alt="Metehan Ulusoy — building things, breaking things, learning in public">
+</picture>
+
+<p align="center"><sub>PRESS START&nbsp; ·&nbsp; PICK A PROBLEM&nbsp; ·&nbsp; BUILD THE NEXT VERSION</sub></p>
 
 <p align="center">
-  <a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img width="260" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=false&theme=compact&show_offline=false&background_color=0d1117&interchange=false" alt="What I am listening to on Spotify right now"></a>
-  &nbsp;&nbsp;&nbsp;
-  <img width="560" src="assets/arcade/intro-v1.svg" alt="I’m a Computer Engineering student who likes owning the whole build loop — from shaping an idea to writing the software, connecting AI where it fits, and automating the repetitive parts">
+  <img width="700" src="assets/arcade/intro-v1.svg" alt="Computer Engineering student. I own the whole loop: idea, design, build, ship">
+</p>
+
+<p align="center">
+  <a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img width="460" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=true&theme=spotify-embed&show_offline=false&interchange=false" alt="What I am listening to on Spotify right now"></a>
 </p>
 
 <p align="center">
