@@ -84,8 +84,6 @@ A year of commits, played as a level.
   </a>
 </p>
 
-Useful idea, weird prototype or hard problem? Send a signal.
-
 <p align="center">
   <a href="https://metehanulusoy.github.io"><strong>PORTFOLIO ↗</strong></a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
