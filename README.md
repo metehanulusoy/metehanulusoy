@@ -1,18 +1,31 @@
 <!--
   PROFILE / SOURCE
 
+  Reading order is deliberate: who → what I work with → proof it is live → a human
+  note → how to reach me. Each of those is one block, separated by an empty centred
+  paragraph. A bare <br> collapses to about 2px between blocks; the empty paragraph
+  reliably adds ~40px, which is what keeps the blocks from running together.
+
   What this file deliberately does NOT carry: repository cards and a contribution
-  calendar. GitHub already renders both directly beneath this README — pinned repos
-  and the real calendar — so duplicating them just made the page twice as long.
-  This file is for what GitHub does not show.
+  calendar. GitHub renders both directly beneath this README — the pinned repos and
+  the real calendar — so duplicating them only made the page twice as long. This file
+  is for what GitHub does not show.
+
+  Everything is centred, including captions. Panels that span the column use
+  width="100%"; the language card is pinned to 420px so it does not stretch.
+
+  A streak card sat here and was removed: streak-stats answers with an HTML
+  "Application Error" page under a 200 status roughly one request in four, which
+  renders as a broken image. Every remaining third-party source was sampled and came
+  back clean — shields, capsule-render, the spotify bar and this mirror.
 
   The nameplate and the intro line are hand-written SVGs in assets/, rendered straight
   from this repo; the nameplate honours prefers-reduced-motion. The terminal card and
   the contribution game are built by GitHub Actions in .github/workflows and published
-  to this repository's `output` branch. The badges, the wave footer and the Spotify bar
-  come from third-party hosts.
+  to this repository's `output` branch. The badges, the two stat cards, the wave footer
+  and the Spotify bar come from third-party hosts.
 
-  No section headings and no dividers on purpose — the panels carry the structure.
+  github-readme-stats' own instance is 503, so the language card points at a mirror.
 
   The Spotify bar uses the spotify-embed theme: it is the only one that shows cover,
   track, artist, a now-playing badge and progress, and the only horizontal one with no
@@ -23,18 +36,14 @@
 -->
 
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/arcade/nameplate-mobile-v1.svg">
-  <img src="assets/arcade/nameplate-v1.svg" width="100%" alt="Metehan Ulusoy — building things, breaking things, learning in public">
+  <source media="(max-width: 600px)" srcset="assets/nameplate-mobile.svg">
+  <img src="assets/nameplate.svg" width="100%" alt="Metehan Ulusoy — building things, breaking things, learning in public">
 </picture>
 
 <p align="center"><sub>PRESS START&nbsp; ·&nbsp; PICK A PROBLEM&nbsp; ·&nbsp; BUILD THE NEXT VERSION</sub></p>
 
 <p align="center">
-  <img width="700" src="assets/arcade/intro-v1.svg" alt="Computer Engineering student. I own the whole loop: idea, design, build, ship">
-</p>
-
-<p align="center">
-  <a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img width="460" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=true&theme=spotify-embed&show_offline=false&interchange=false" alt="What I am listening to on Spotify right now"></a>
+  <img width="700" src="assets/intro.svg" alt="Computer Engineering student. I own the whole loop: idea, design, build, ship">
 </p>
 
 <p align="center">
@@ -48,11 +57,15 @@
   <img src="https://img.shields.io/badge/Docker-0D1117?style=for-the-badge&logo=docker&logoColor=2496ED" alt="Docker">
 </p>
 
-<p align="center"><a href="https://github.com/metehanulusoy?tab=repositories"><strong>All repositories →</strong></a></p>
+<p align="center">&nbsp;</p>
+
+<p align="center">
+  <img width="420" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=metehanulusoy&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=32F5C4&text_color=c9d1d9&langs_count=6" alt="Most used languages across my repositories">
+</p>
 
 <img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/terminal-hacker.svg" width="100%" alt="Terminal session typing whoami and neofetch, printing live GitHub stats">
 
-<sub>Rebuilt daily from GitHub’s API by a workflow in this repository and published to the <code>output</code> branch.</sub>
+<p align="center"><sub>Rebuilt daily from GitHub’s API by a workflow in this repository, published to the <code>output</code> branch.</sub></p>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/bomberman-contribution-graph-dark.svg">
@@ -60,9 +73,14 @@
   <img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/bomberman-contribution-graph-dark.svg" width="100%" alt="Bomberman clearing a year of GitHub contributions square by square">
 </picture>
 
-<!-- spacer: a bare <br> between blocks collapses to ~2px here; an empty centred
-     paragraph reliably adds ~40px, which balances this row between the grid above
-     and the wave below -->
+<p align="center"><sub>A year of commits, played as a level.</sub></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">
+  <a href="https://open.spotify.com/user/hnvlh6g6uks1v2ipijfcfsbb9"><img width="460" src="https://spotify-github-profile.kittinanx.com/api/view?uid=hnvlh6g6uks1v2ipijfcfsbb9&cover_image=true&theme=spotify-embed&show_offline=false&interchange=false" alt="What I am listening to on Spotify right now"></a>
+</p>
+
 <p align="center">&nbsp;</p>
 
 <p align="center">
