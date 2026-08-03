@@ -33,7 +33,7 @@ const metehan = {
 
 ## 01 / Live terminal
 
-<img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/terminal-hacker.svg" width="100%" alt="Terminal session printing live GitHub stats: whoami, neofetch, languages, top repositories and uptime">
+<img src="https://raw.githubusercontent.com/metehanulusoy/metehanulusoy/output/terminal-hacker.svg" width="100%" alt="Terminal session typing whoami and neofetch, printing live GitHub stats">
 
 <sub>Rebuilt daily from GitHub’s API by a workflow in this repository and published to the <code>output</code> branch.</sub>
 

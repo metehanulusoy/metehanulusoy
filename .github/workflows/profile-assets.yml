@@ -46,14 +46,32 @@ jobs:
       # on purpose: the deploy runs with keep_history:false, so a second deploy
       # would wipe the first one's files off the output branch.
 
-      - name: Build terminal stats card
-        uses: yogeshwaran01/github-stats-terminal-style@f07802ed1eb12acb90d4acac60fd7f313c543862 # v1.0.0
+      # github-stats-terminal-style cannot be used with `uses:` — the project never
+      # commits its compiled dist/, on any branch or tag, so the action entrypoint
+      # is missing everywhere. Build it from a pinned commit and run it directly;
+      # the action reads its inputs from INPUT_* environment variables.
+      - name: Set up Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          username: metehanulusoy
-          theme: hacker
-          headerStyle: mac
-          commands: whoami,neofetch,languages,top-repos,uptime,exit
-          outputPath: terminal-hacker.svg
+          node-version: "24"
+
+      - name: Build terminal stats card
+        env:
+          INPUT_USERNAME: metehanulusoy
+          INPUT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INPUT_THEME: hacker
+          INPUT_HEADERSTYLE: mac
+          INPUT_TYPINGSPEED: "60"
+          INPUT_COMMANDS: whoami,neofetch,exit
+          INPUT_OUTPUTPATH: ${{ github.workspace }}/terminal-hacker.svg
+        run: |
+          git clone --quiet https://github.com/yogeshwaran01/github-stats-terminal-style.git "$RUNNER_TEMP/tsg"
+          cd "$RUNNER_TEMP/tsg"
+          git checkout --quiet 9822eb42e2f3fe71e03676f85668217b91938142
+          npm ci --silent
+          npm run build
+          node dist/src/action/index.js
+          test -s "$GITHUB_WORKSPACE/terminal-hacker.svg"
 
       - name: Build 3D contribution calendar
         uses: yoshi389111/github-profile-3d-contrib@7d95e7d4cdc028dd1e1cbd957d65f35efb12ae39 # v0.9.3
