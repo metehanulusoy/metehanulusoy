@@ -13,6 +13,11 @@ from xml.etree import ElementTree
 ROOT = Path(__file__).resolve().parent.parent
 README = ROOT / "README.md"
 MAX_SVG_BYTES = 120_000
+# Raster art is the one thing here that can quietly cost a visitor megabytes;
+# the city GIF ships at 515 KB after ffmpeg, so this leaves room without inviting
+# an unoptimised drop-in.
+MAX_RASTER_BYTES = 700_000
+RASTER_SUFFIXES = {".gif", ".png", ".jpg", ".jpeg", ".webp"}
 SMIL_TAGS = {"animate", "animateMotion", "animateTransform", "set"}
 
 HTML_ASSET = re.compile(r"(?:src|srcset)=\"([^\"]+)\"")
@@ -69,6 +74,18 @@ def main() -> int:
     for path in svg_paths:
         errors.extend(validate_svg(path))
 
+    raster_paths = sorted(
+        p for p in (ROOT / "assets").rglob("*")
+        if p.suffix.lower() in RASTER_SUFFIXES
+    )
+    for path in raster_paths:
+        size = path.stat().st_size
+        if size > MAX_RASTER_BYTES:
+            errors.append(
+                f"{path.relative_to(ROOT)}: {size} bytes exceeds "
+                f"{MAX_RASTER_BYTES} — re-encode it before committing"
+            )
+
     readme = README.read_text(encoding="utf-8")
     references = HTML_ASSET.findall(readme) + MARKDOWN_ASSET.findall(readme)
     for reference in references:
@@ -82,8 +99,8 @@ def main() -> int:
         return 1
 
     print(
-        f"[ok] validated {len(svg_paths)} SVG files and "
-        f"{len(references)} README asset references"
+        f"[ok] validated {len(svg_paths)} SVG files, {len(raster_paths)} raster "
+        f"assets and {len(references)} README asset references"
     )
     return 0
 
