@@ -26,8 +26,11 @@
   aggregate is stuck at zero — 25 completed entries with progress on 24 of them,
   and count/episodesWatched/minutesWatched have all reported 0 for over eight
   hours. MediaListCollection returns the real rows, so the panel counts those.
-  Doing it here also means it matches the palette, which the hosted card did not,
-  and it cannot go stale behind that service's 24-hour cache.
+
+  The covers are embedded as base64 JPEGs, not linked: an SVG inside the <img>
+  GitHub renders it in is its own document and browsers block its outbound
+  requests, so s4.anilist.co URLs would draw an empty grid. Thumbnail size and
+  JPEG quality are set to keep the file under the 120 KB ceiling.
 
   Every animation rests in a readable state under prefers-reduced-motion and
   none uses <script>, which never runs inside the <img> GitHub renders these in.
@@ -64,7 +67,7 @@
 </p>
 
 <p align="center">
-  <a href="https://anilist.co/user/metmete"><img width="50%" src="assets/anilist.svg" alt="Anime I have finished, counted from my AniList list"></a>
+  <a href="https://anilist.co/user/metmete"><img width="100%" src="assets/anilist.svg" alt="Anime I have finished, counted from my AniList list"></a>
 </p>
 
 <p align="center"><img src="https://visitor-badge.laobi.icu/badge?page_id=metehanulusoy.metehanulusoy&left_text=PROFILE%20VIEWS&left_color=%231a0b2e&right_color=%23FF6B9D" alt="Profile views"></p>
