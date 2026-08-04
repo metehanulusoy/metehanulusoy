@@ -27,6 +27,12 @@
   and count/episodesWatched/minutesWatched have all reported 0 for over eight
   hours. MediaListCollection returns the real rows, so the panel counts those.
 
+  The two stat cards are matched by aspect ratio, not by eye. The stats card is
+  fixed at 495x195 and ignores card_width entirely; top-langs honours it but adds
+  50 to whatever you ask for. card_width=369 therefore yields 419x165, whose
+  ratio lands within 0.001 of the stats card — so at equal display widths the two
+  render the same height and their top and bottom edges line up.
+
   The covers are embedded as base64 JPEGs, not linked: an SVG inside the <img>
   GitHub renders it in is its own document and browsers block its outbound
   requests, so s4.anilist.co URLs would draw an empty grid. Thumbnail size and
@@ -62,8 +68,8 @@
 <img src="assets/sep1.svg" width="100%" alt="">
 
 <p align="center">
-  <img width="49%" src="https://github-readme-stats-eight-theta.vercel.app/api?username=metehanulusoy&show_icons=true&theme=synthwave&hide_border=true&bg_color=1a0b2e&title_color=FF6B9D&text_color=f7e8ff&icon_color=C56CF0&rank_icon=github" alt="Stars, commits, pull requests and issues">
-  <img width="46%" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=metehanulusoy&layout=compact&theme=synthwave&hide_border=true&bg_color=1a0b2e&title_color=FF6B9D&text_color=f7e8ff&langs_count=6" alt="Most used languages">
+  <img width="49.7%" src="https://github-readme-stats-eight-theta.vercel.app/api?username=metehanulusoy&show_icons=true&theme=synthwave&hide_border=true&bg_color=1a0b2e&title_color=FF6B9D&text_color=f7e8ff&icon_color=C56CF0&rank_icon=github" alt="Stars, commits, pull requests and issues">
+  <img width="49.7%" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=metehanulusoy&layout=compact&theme=synthwave&hide_border=true&bg_color=1a0b2e&title_color=FF6B9D&text_color=f7e8ff&langs_count=6&card_width=369" alt="Most used languages">
 </p>
 
 <p align="center">
