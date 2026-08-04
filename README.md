@@ -21,10 +21,13 @@
   raster asset ships right now: the city GIF that prompted it is gone, but the
   ceiling is what stops the next unoptimised drop-in.
 
-  The AniList card is user 8189019 (metmete). It shows a stats strip only once
-  the list has entries with progress on them: AniList counts what you have
-  watched, not what you have added — a list of 22 titles all sitting at episode
-  0 reports a count of 0.
+  The AniList panel is drawn by scripts/build_anilist_card.py rather than pulled
+  from img.anili.st. That service reads User.statistics, and on this account the
+  aggregate is stuck at zero — 25 completed entries with progress on 24 of them,
+  and count/episodesWatched/minutesWatched have all reported 0 for over eight
+  hours. MediaListCollection returns the real rows, so the panel counts those.
+  Doing it here also means it matches the palette, which the hosted card did not,
+  and it cannot go stale behind that service's 24-hour cache.
 
   Every animation rests in a readable state under prefers-reduced-motion and
   none uses <script>, which never runs inside the <img> GitHub renders these in.
@@ -61,7 +64,7 @@
 </p>
 
 <p align="center">
-  <a href="https://anilist.co/user/8189019"><img width="50%" src="https://img.anili.st/user/8189019" alt="What I am watching on AniList"></a>
+  <a href="https://anilist.co/user/metmete"><img width="50%" src="assets/anilist.svg" alt="Anime I have finished, counted from my AniList list"></a>
 </p>
 
 <p align="center"><img src="https://visitor-badge.laobi.icu/badge?page_id=metehanulusoy.metehanulusoy&left_text=PROFILE%20VIEWS&left_color=%231a0b2e&right_color=%23FF6B9D" alt="Profile views"></p>
